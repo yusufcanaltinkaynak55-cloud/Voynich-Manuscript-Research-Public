@@ -49,6 +49,9 @@ jobs:
               assert e['context_gain_over_position']['informative_folios']>=10
           print('B10 real corpus evidence contract PASS, semantics NOT ESTIMABLE')
           PY
+      - name: Check exact metrics against first successful public run
+        run: python evidence/b10/check_results.py --actual /tmp/b10-public-results.json
+
       - uses: actions/upload-artifact@v4
         with:
           name: b10-public-eva-spelling-reconstruction-not-decipherment
