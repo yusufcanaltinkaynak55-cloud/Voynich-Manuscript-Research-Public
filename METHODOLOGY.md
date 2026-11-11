@@ -53,7 +53,7 @@ Drawing proximity alone does not establish meaning. Shared spelling fragments al
 | Independently verified reading and translation | Potential decipherment evidence, subject to critical review |
 | No reliable answer key | **NOT EVALUABLE / NOT ESTIMABLE** for semantic accuracy |
 
-An independent reimplementation must use the published data manifest, hashes, protocol, outputs, and scripts. **Those complete materials are not yet present in this public repository.** See [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
+An independent reimplementation must use the published data manifest, hashes, protocol, outputs, and scripts. **Most internal experiments do not yet have those complete materials in this public repository.** A narrowly scoped, publicly runnable exception is [B09-OPEN-001](evidence/b09/README.md), which tests code-collision rates, not meaning. See [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
 
 ## 6. Authorship, AI use, and corrections
 
