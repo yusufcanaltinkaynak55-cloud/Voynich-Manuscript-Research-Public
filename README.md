@@ -8,13 +8,24 @@
 
 This repository presents a carefully scoped public record of computational and historical hypotheses about the Voynich Manuscript. The objective is to test how the manuscript's writing behaves and to compare competing language, script, and cipher mechanisms without treating resemblance or a machine-learning score as a translation.
 
-The public repository is **not** a mirror of the private research environment. It does not contain the proprietary Sherlock research implementation, model weights, unpublished candidate keys, private correspondence, credentials, or third-party raw corpora and manuscript images. Some summarized results originate in internal experiment records and **cannot yet be independently reproduced from the files published here**.
+The public repository is **not** a mirror of the private research environment. It does not contain the proprietary Sherlock research implementation, model weights, unpublished candidate keys, private correspondence, credentials, or third-party raw corpora and manuscript images. Some summarized results originate in internal experiment records and **cannot yet be reproduced from this public release**. An exception is the narrowly defined **B09 spelling-collision calculation**, for which a public reference program and successful GitHub Actions run are now available. This is computational repeatability, **not independent semantic verification**.
+
+## First publicly runnable real-data evidence package
+
+**[B09-OPEN-001: unseen-spelling code collisions](evidence/b09/README.md)** is a small, transparent Python-standard-library test on version-pinned ZL3b and IT2a transcriptions. Both inputs are independently downloaded and hash-checked; a folio-partitioned OOV test compares deletion of `aeioy` against deletion of `dklrs` and 30 matched-deletion-count randomized controls. This explicitly tests **spelling collisions, not decipherment**.
+
+- [Measured public-run results](evidence/b09/RESULTS.md): 875 / 966 OOV test occurrences; 75.77% / 74.95% `aeioy` collisions, versus the specified controls.
+- [Reproduction script](evidence/b09/reference.py), [regression tests](evidence/b09/test_reference.py), [frozen expected outputs](evidence/b09/expected_metrics.json).
+- [Successful public GitHub Actions run](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/runs/42992577209).
+
+The code is a **reference reimplementation**, not the private Sherlock software. These are previously explored holdouts, **not a newly blind discovery**. A third-party research team has **not yet** independently replicated or reviewed the findings.
 
 ## Read the research
 
 | Document | Purpose |
 | --- | --- |
 | [HYPOTHESES.md](HYPOTHESES.md) | Competing hypotheses, limitations, and falsification criteria |
+| [evidence/b09/README.md](evidence/b09/README.md) | First public real-data reproduction package and verified run |
 | [METHODOLOGY.md](METHODOLOGY.md) | Research design, controls, leakage risks, and evidence standards |
 | [RESULTS.md](RESULTS.md) | Dated exploratory findings, negative results, and what they **do not** establish |
 | [REPRODUCIBILITY.md](REPRODUCIBILITY.md) | Current reproducibility gap and an auditable release checklist |
