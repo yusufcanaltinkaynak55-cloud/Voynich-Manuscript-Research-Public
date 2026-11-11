@@ -2,7 +2,7 @@
 
 **Public reference release:** 11 November 2026  
 **Source:** Previously conducted internal B10 study, 4 November 2026  
-**Status:** PUBLIC REIMPLEMENTATION, FAIRNESS RECHECK PENDING FIRST RUN; **NOT A DECIPHERMENT**
+**Status:** PUBLICLY REPRODUCED ORTHOGRAPHIC BENCHMARK / INDEPENDENT SCIENTIFIC REVIEW PENDING; **NOT A DECIPHERMENT**
 
 ## Scientific question
 
@@ -37,6 +37,7 @@ Python 3.11+; internet access required only to retrieve source files. From the r
 ```bash
 python -m unittest discover -s evidence/b10 -p 'test_*.py' -v
 python evidence/b10/reference.py --download --null-reps 99 --bootstrap-reps 500 --out /tmp/b10-public.json
+python evidence/b10/check_results.py --actual /tmp/b10-public.json
 ```
 
 Offline users can download the exact pinned ZL3b and IT2a inputs, verify their hashes automatically, and run:
@@ -45,9 +46,13 @@ Offline users can download the exact pinned ZL3b and IT2a inputs, verify their h
 python evidence/b10/reference.py --zl3b /path/to/ZL3b-n.txt --it2a /path/to/IT2a-n.txt --null-reps 99 --bootstrap-reps 500 --out /tmp/b10-public.json
 ```
 
-[Continuous integration](../../.github/workflows/b10-public-reproduction.yml) executes seven synthetic checks, the real-data reference benchmark, a result-schema check, and stores derived JSON metrics as a workflow artifact. A **successful software run is not a third-party independent scientific replication**.
+[Continuous integration](../../.github/workflows/b10-public-reproduction.yml) executes seven synthetic checks, the real-data reference benchmark, a result-schema check, a fixed-output regression comparison, and stores derived JSON metrics as a workflow artifact. Its [11 November 2026 completed run](RESULTS.md) **passed**. A successful software run is **not a third-party independent scientific replication**.
 
-## Internal B10 comparator (not today's public run)
+## Verified public-run results
+
+[Read the full measured public results](RESULTS.md): 4,659 / 4,616 ambiguous eligible test occurrences; frequency-only top-1 53.29% / 52.86%; role-only 53.60% / 53.18%; contextual 53.90% / 53.05%. Neighbour-code contribution was small and the IT2a top-1 classification did not beat role-only. **These are restricted written-form prediction scores, not Voynich reading rates.**
+
+## Internal B10 comparator (different, earlier study)
 
 The 4 November private-laboratory report recorded the following restricted-subset statistics: ZL3b 4,659 ambiguous eligible tokens, baseline frequency top-1 **53.29%**, role-only **53.60%**, context **53.90%**; IT2a 4,616 tokens, frequency **52.86%**, role-only **53.18%**, context **53.05%**.
 
