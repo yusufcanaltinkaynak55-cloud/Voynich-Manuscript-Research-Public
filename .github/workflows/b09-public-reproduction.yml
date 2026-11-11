@@ -53,6 +53,9 @@ jobs:
           print('Evidence schema PASS. No semantic decipherment claimed.')
           PY
 
+      - name: Compare with frozen first public-run metrics
+        run: python evidence/b09/check_results.py --actual /tmp/b09-public-result.json
+
       - uses: actions/upload-artifact@v4
         with:
           name: b09-public-orthographic-collisions-not-decipherment
