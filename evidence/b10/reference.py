@@ -9,15 +9,22 @@ from __future__ import annotations
 import argparse
 from collections import Counter, defaultdict
 import hashlib
+import importlib.util
 import json
 import math
 from pathlib import Path
 import random
 import re
-import sys
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "b09"))
-import reference as b09  # public source integrity, IVTFF metadata, fixed folios
+# Import the published B09 source by an unambiguous module name. The B10 and
+# B09 scripts are both called reference.py; ordinary imports may bind the
+# wrong module during unittest discovery.
+_b09_file = Path(__file__).resolve().parents[1] / "b09" / "reference.py"
+_b09_spec = importlib.util.spec_from_file_location("b09_public_reference", _b09_file)
+if _b09_spec is None or _b09_spec.loader is None:
+    raise ImportError("Cannot locate public B09 integrity and split utilities")
+b09 = importlib.util.module_from_spec(_b09_spec)
+_b09_spec.loader.exec_module(b09)
 
 TUNING = (0.0, 0.2, 0.4, 0.6, 0.8)
 SIDE = (0.0, 0.15, 0.30)
