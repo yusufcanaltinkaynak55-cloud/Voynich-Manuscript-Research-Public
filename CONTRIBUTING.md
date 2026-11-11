@@ -2,6 +2,12 @@
 
 Thank you for engaging critically with the Voynich Manuscript. Contributions are welcome when they are **testable, sourced, and appropriately limited in scope**.
 
+## Language and editorial policy
+
+Please write all **public submissions and discussions in English**, including scientific reports, pull-request descriptions, issue titles, test documentation, and code comments. Proper names, manuscript identifiers, source-language words examined as data, and original bibliographic titles may be kept in their original spelling; provide an English explanation or translation when needed.
+
+Please do **not** silently translate or rewrite source-transcription records: their literal characters and provenance are scientific data, not interface prose.
+
 ## Useful submissions
 
 - Reproducible tests of one stated structural hypothesis.
