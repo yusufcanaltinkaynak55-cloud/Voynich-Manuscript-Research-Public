@@ -1,0 +1,68 @@
+{
+  "experiment": "B10-OPEN-001",
+  "source_run": {
+    "id": 43069965161,
+    "commit": "44777018af7cf80f1fa1f9da07049015f7a0b59b",
+    "date": "2026-11-11",
+    "note": "First successful GitHub Actions run; derived metrics transcribed from its logs"
+  },
+  "important_limits": [
+    "Not a cipher key",
+    "Not a translation",
+    "Previously explored folios",
+    "Eligible targets restricted to spellings already represented in codebook",
+    "Bidirectional neighbor-code context"
+  ],
+  "ZL3b": {
+    "all_test_tokens": 6164,
+    "ambiguous_evaluable": 4659,
+    "unknown_transformed_code": 445,
+    "known_code_but_unseen_original_form": 989,
+    "only_one_form_candidate": 71,
+    "frequency": {
+      "top1": 0.532947,
+      "bits_per_token": 1.9427479
+    },
+    "position": {
+      "top1": 0.5359519,
+      "bits_per_token": 1.8990116
+    },
+    "context": {
+      "top1": 0.5389569,
+      "bits_per_token": 1.8946422
+    },
+    "context_vs_position_bpt": 0.0043694,
+    "bootstrap95": [
+      0.0006506,
+      0.0076628
+    ],
+    "permutation_p": 0.01,
+    "shuffled_median_bpt": 1.9001489
+  },
+  "IT2a": {
+    "all_test_tokens": 6266,
+    "ambiguous_evaluable": 4616,
+    "unknown_transformed_code": 497,
+    "known_code_but_unseen_original_form": 1073,
+    "only_one_form_candidate": 80,
+    "frequency": {
+      "top1": 0.5285962,
+      "bits_per_token": 1.9778085
+    },
+    "position": {
+      "top1": 0.5318458,
+      "bits_per_token": 1.9284097
+    },
+    "context": {
+      "top1": 0.5305459,
+      "bits_per_token": 1.9270781
+    },
+    "context_vs_position_bpt": 0.0013315,
+    "bootstrap95": [
+      -0.0014475,
+      0.004095
+    ],
+    "permutation_p": 0.01,
+    "shuffled_median_bpt": 1.9301333
+  }
+}
