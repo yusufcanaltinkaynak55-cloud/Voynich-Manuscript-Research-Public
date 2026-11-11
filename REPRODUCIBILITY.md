@@ -1,10 +1,10 @@
 # Reproducibility and release readiness
 
-**Current reproducibility classification:** **ONE PUBLICLY RUNNABLE, REAL-CORPUS COMPUTATIONAL REPRODUCTION (B09-OPEN-001); INDEPENDENT EXTERNAL SCIENTIFIC REPLICATION PENDING.**
+**Current reproducibility classification:** **TWO PUBLICLY RUNNABLE, REAL-CORPUS REFERENCE COMPUTATIONS (B09-OPEN-001 AND B10-OPEN-001); INDEPENDENT EXTERNAL SCIENTIFIC REPLICATION PENDING.**
 
-This public repository contains methodological summaries, a hypothesis registry, carefully labeled internal experiment outcomes, and **one self-contained reference evaluator** for a precisely defined part of the B09 study. The evaluator fetches third-party transcriptions from immutable upstream versions and verifies their hashes. The repository still contains **no private Sherlock implementation, no raw third-party corpus, and no complete evidence bundle for the other internal experiments**.
+This public repository contains methodological summaries, a hypothesis registry, carefully labeled internal experiment outcomes, and **two narrowly scoped public reference evaluators** for B09 (transformed spelling collisions) and B10 (restricted complete-spelling candidate selection). Both use version-pinned third-party transcriptions and verify exact SHA-256 hashes. The repository still contains **no private Sherlock implementation, no raw third-party corpus, and no complete evidence bundle for remaining private-laboratory experiments**.
 
-The [B09-OPEN-001 reproduction package](evidence/b09/README.md) is **runnable** with Python 3.11+, an internet connection to fetch pinned sources, and no private credentials. Its [first public run passed](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/runs/42992577209). The code and derived metrics are open for inspection; this alone is **not an independent scientific review**. **Do not claim** that cloning this repository reproduces the other internal results in [RESULTS.md](RESULTS.md).
+The [B09-OPEN-001](evidence/b09/README.md) and [B10-OPEN-001](evidence/b10/README.md) packages are runnable with Python 3.11+, an internet connection to fetch pinned sources, and no private credentials. The [B09 run passed](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/runs/42992577209) and the [B10 run passed](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/runs/43069965161). The code and derived metrics are open for inspection; this alone is **not an independent scientific review**. **Do not claim** that cloning this repository reproduces the other internal results in [RESULTS.md](RESULTS.md).
 
 ## Completed B09 reproducibility stage
 
@@ -20,6 +20,20 @@ python evidence/b09/reference.py --download --trials 30 --out /tmp/b09-public.js
 python evidence/b09/check_results.py --actual /tmp/b09-public.json
 ```
 
+
+## Completed B10 reproducibility stage
+
+- **Source and split integrity:** identical B09 folio partitions reused explicitly, with SHA-256-pinned transcription sources.
+- **Model fairness:** position-only parameter choices are included in the contextual model's validation grid; all weights are selected using ZL3b validation only.
+- **Observed run:** [B10 public computational results](evidence/b10/RESULTS.md) and its [successful CI log](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/runs/43069965161).
+- **Regressions:** [expected aggregate results](evidence/b10/expected_metrics.json), [deterministic numerical check](evidence/b10/check_results.py), and seven synthetic tests.
+- **Scientific limitation:** selecting among previously seen candidate spellings is **not** historical reading, and IT2a did not show a robust context-over-role top-1 advantage.
+
+```bash
+python -m unittest discover -s evidence/b10 -p 'test_*.py' -v
+python evidence/b10/reference.py --download --null-reps 99 --bootstrap-reps 500 --out /tmp/b10-public.json
+python evidence/b10/check_results.py --actual /tmp/b10-public.json
+```
 
 ## Minimum evidence bundle for a future independently reproducible result
 
