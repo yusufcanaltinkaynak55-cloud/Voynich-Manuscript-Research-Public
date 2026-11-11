@@ -17,6 +17,10 @@ The [B09-OPEN-001 package](evidence/b09/README.md) was run successfully on GitHu
 
 This is **reproduction of a structural many-to-one code-match measurement** on already explored folios. It is **not** an independently verified reading of even one Voynich word. Independent outside replication remains pending.
 
+## Published English research synthesis of the B08–B16 series
+
+The [glyph-obfuscation study](GLYPH_OBFUSCATION_STUDY.md) now documents the **full B08–B16 line of investigation** in English: matching transformed spelling codes, ambiguity, contextual candidate selection, competing glyph controls, natural-language comparisons, glyph merging, null outcomes, and limits of interpretation. **Only the B09 subtest has a verified public computational reproduction package**; the other figures are explicitly labeled as internal reports pending independent replication.
+
 ## Internal findings: precise claims only
 
 | Internal study / date | Observed or reported internal result | Status and limits |
