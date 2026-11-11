@@ -42,17 +42,17 @@ class PublicB09Tests(unittest.TestCase):
                 self.assertEqual(output, randomized_skeleton(word, trial))
 
     def test_transcription_markup_is_not_silently_joined(self):
-        head = b"<f1r> <! $H=1 $L=A $I=H>\n"
-        line = (b"<f1r.1,+P0> daiin.dan<->dor.{x}.d?e."
+        head = b"<f211r> <! $H=1 $L=A $I=H>\n"
+        line = (b"<f211r.1,+P0> daiin.dan<->dor.{x}.d?e."
                 b"<!editor>chol<$>\n")
         blob = head + line
         self.assertEqual(parse_ivtff.__name__, "parse_ivtff")
         # The production parser refuses toy-sized manuscripts; append benign
         # synthetic pages solely to exercise its parsing contract.
-        toy = blob + fixture(210)
+        toy = fixture(210) + blob
         pages = parse_ivtff(toy)
-        self.assertEqual(pages["f1r"]["words"], ["dain", "dan", "dor", "chol"])
-        self.assertEqual(pages["f1r"]["p_lines"], 3)
+        self.assertEqual(pages["f211r"]["words"], ["daiin", "dan", "dor", "chol"])
+        self.assertEqual(pages["f211r"]["p_lines"], 1)
 
     def test_folio_partition_is_repeatable_and_disjoint(self):
         pages = parse_ivtff(fixture(210))
