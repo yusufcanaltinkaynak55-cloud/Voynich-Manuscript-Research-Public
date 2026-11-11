@@ -1,7 +1,7 @@
 # Results and limitations ledger
 
 **Public summary prepared:** 11 November 2026.  
-**Source status:** Most items below are summaries of dated **internal** laboratory records. Their underlying private code, raw datasets, fixed environment manifests, and complete logs have **not been published**. **Exception:** the narrow B09 transformed-spelling collision statistic now has a separately documented, publicly runnable reference evaluator. This does **not** independently reproduce other experiments or establish any decipherment.
+**Source status:** Most items below are summaries of dated **internal** laboratory records. Their underlying private code, raw datasets, fixed environment manifests, and complete logs have **not been published**. **Exceptions:** the narrow B09 transformed-spelling collision statistic and B10 original-spelling candidate-selection benchmark now have separately documented, publicly runnable reference evaluators. This does **not** independently reproduce other experiments or establish any decipherment.
 
 ## Overall conclusion
 
@@ -20,6 +20,17 @@ This is **reproduction of a structural many-to-one code-match measurement** on a
 ## Published English research synthesis of the B08–B16 series
 
 The [glyph-obfuscation study](GLYPH_OBFUSCATION_STUDY.md) now documents the **full B08–B16 line of investigation** in English: matching transformed spelling codes, ambiguity, contextual candidate selection, competing glyph controls, natural-language comparisons, glyph merging, null outcomes, and limits of interpretation. **Only the B09 subtest has a verified public computational reproduction package**; the other figures are explicitly labeled as internal reports pending independent replication.
+
+## Second successful public real-data benchmark: B10-OPEN-001
+
+The [B10-OPEN-001 reference benchmark](evidence/b10/README.md) successfully ran on [GitHub Actions on 11 November 2026](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/runs/43069965161), using the **same previously explored folio partition** and pinned ZL3b / IT2a sources.
+
+- ZL3b: **4,659** eligible ambiguous written-form occurrences; frequency top-1 **53.29%**; position-only **53.60%**; context model **53.90%**.
+- IT2a: **4,616** such eligible occurrences; frequency **52.86%**; position-only **53.18%**; context **53.05%**.
+- The contextual gain in log-loss over position-only was **+0.0043694 bits/token** on ZL3b (folio bootstrap 95% interval **[+0.0006506, +0.0076628]**) and **+0.0013315 bits/token** on IT2a (interval **[−0.0014475, +0.0040950]**). The second interval includes zero. The IT2a contextual top-1 score was lower than position-only.
+- [Full public results, denominators, negative findings and limitations](evidence/b10/RESULTS.md).
+
+These figures apply **only** when the correct original EVA spelling is already one of several training candidates under the same shortened code. The benchmark cannot generate unseen spellings and does **not** measure translated words. Test folios were previously examined, and bidirectional neighbour information was used.
 
 ## Internal findings: precise claims only
 
@@ -45,8 +56,8 @@ The [glyph-obfuscation study](GLYPH_OBFUSCATION_STUDY.md) now documents the **fu
 
 ## Known evidence gaps
 
-1. **Publicly released provenance for remaining studies:** exact corpora and permissions, immutable source references, hashes, and preprocessing. B09 has a scoped source manifest and public reference pipeline.
-2. **Executable benchmarks for remaining studies:** frozen scripts, seeds, parameter settings, baseline definitions, and machine-readable results. B09 has a scoped runnable public implementation.
+1. **Publicly released provenance for remaining studies:** exact corpora and permissions, immutable source references, hashes, and preprocessing. B09 and B10 have scoped source manifests and public reference pipelines.
+2. **Executable benchmarks for remaining studies:** frozen scripts, seeds, parameter settings, baseline definitions, and machine-readable results. B09 and B10 have scoped runnable public implementations.
 3. **True external holdout:** folios or independent historical witnesses not repeatedly used in exploratory model selection.
 4. **Image-to-text linkage:** reviewed folio/line/glyph coordinates and uncertainty annotations.
 5. **Historical validation:** independently sourced, falsifiable glyph-to-reading-to-meaning chains.
