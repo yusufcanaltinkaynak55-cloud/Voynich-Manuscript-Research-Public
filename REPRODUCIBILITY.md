@@ -1,10 +1,25 @@
 # Reproducibility and release readiness
 
-**Current reproducibility classification:** **PUBLIC DOCUMENTATION ONLY / INDEPENDENT REPRODUCTION NOT YET AVAILABLE.**
+**Current reproducibility classification:** **ONE PUBLICLY RUNNABLE, REAL-CORPUS COMPUTATIONAL REPRODUCTION (B09-OPEN-001); INDEPENDENT EXTERNAL SCIENTIFIC REPLICATION PENDING.**
 
-This initial public repository contains methodological summaries, a hypothesis registry, and carefully labeled internal experiment outcomes. It contains **no executable reproduction package**, no raw third-party corpus, no complete test manifest, and no proprietary Sherlock implementation.
+This public repository contains methodological summaries, a hypothesis registry, carefully labeled internal experiment outcomes, and **one self-contained reference evaluator** for a precisely defined part of the B09 study. The evaluator fetches third-party transcriptions from immutable upstream versions and verifies their hashes. The repository still contains **no private Sherlock implementation, no raw third-party corpus, and no complete evidence bundle for the other internal experiments**.
 
-**Do not claim** that cloning this repository alone reproduces the numerical values in [RESULTS.md](RESULTS.md).
+The [B09-OPEN-001 reproduction package](evidence/b09/README.md) is **runnable** with Python 3.11+, an internet connection to fetch pinned sources, and no private credentials. Its [first public run passed](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/runs/42992577209). The code and derived metrics are open for inspection; this alone is **not an independent scientific review**. **Do not claim** that cloning this repository reproduces the other internal results in [RESULTS.md](RESULTS.md).
+
+## Completed B09 reproducibility stage
+
+- **Source integrity:** version-pinned ZL3b/IT2a transcriptions and hard-coded SHA-256 validation.
+- **Evaluation disclosure:** deterministic folio-stratified split, held-out OOV definition, competing fixed masks, and 30 equal-deletion-count null trials.
+- **Public execution:** GitHub Actions unit tests and real-corpus computation completed successfully on 11 November 2026.
+- **Durable baseline:** [measured results](evidence/b09/RESULTS.md) and [machine-readable aggregate expectations](evidence/b09/expected_metrics.json).
+- **Remaining:** outside reproduction, independent data/segmentation audit, truly new holdout, and historical reading/meaning validation.
+
+```bash
+python -m unittest discover -s evidence/b09 -p 'test_*.py' -v
+python evidence/b09/reference.py --download --trials 30 --out /tmp/b09-public.json
+python evidence/b09/check_results.py --actual /tmp/b09-public.json
+```
+
 
 ## Minimum evidence bundle for a future independently reproducible result
 
