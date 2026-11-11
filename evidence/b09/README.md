@@ -62,7 +62,7 @@ The private laboratory's 4 November 2026 B08/B09 summary reported:
 | Same-deletion-count random median | 47.54% | 48.96% |
 | Multiple training-form ambiguity among matched codes | 85.37% | 85.36% |
 
-**These figures are archival comparator values, not freshly confirmed public-run numbers.** Any discrepancy must be reported, not hidden or forcibly tuned to the original. See [RESULTS.md](../../RESULTS.md) and the generated Actions artifact for the actual public run. Neither experiment establishes a decipherment.
+**These are the archived laboratory comparator values.** The [11 November 2026 public run](RESULTS.md) independently executed the reference script in GitHub Actions and reproduced their main aggregate rates. This is a second computational implementation of an already explored task, **not** an untouched new test or validation by an outside researcher. Any future discrepancy must be reported rather than tuned away. Neither experiment establishes a decipherment.
 
 ## Scope and legal limits
 
