@@ -1,0 +1,21 @@
+{
+  "experiment": "B09-OPEN-001",
+  "first_public_run": {
+    "run_id": 42992577209,
+    "head_sha": "c969120ebbdfc9e236c55a0a1aed517fd1ffaa20",
+    "source": "Public GitHub Actions logs, 11 November 2026",
+    "note": "Rates are orthographic code collisions, not decipherment"
+  },
+  "ZL3b": {
+    "oov_test_tokens": 875,
+    "remove_aeioy_rate": 0.757714,
+    "remove_dklrs_rate": 0.610286,
+    "random_median_rate": 0.475429
+  },
+  "IT2a": {
+    "oov_test_tokens": 966,
+    "remove_aeioy_rate": 0.749482,
+    "remove_dklrs_rate": 0.615942,
+    "random_median_rate": 0.489648
+  }
+}
