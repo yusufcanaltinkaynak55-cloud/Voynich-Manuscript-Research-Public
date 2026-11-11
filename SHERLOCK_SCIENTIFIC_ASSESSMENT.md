@@ -160,7 +160,7 @@ The next credible milestone is **not a larger claimed reading percentage**. It i
 
 ### Provenance, scope and revision note
 
-- **Source:** internal laboratory document titled *Koçi Bey Raporu*, KBR-001, dated **7 November 2026**, adapted and condensed for public disclosure on **11 November 2026**.
+- **Source:** internal laboratory document KBR-001 (the original Turkish-language *Koçi Bey Report*), dated **7 November 2026**, adapted and condensed for public disclosure on **11 November 2026**.
 - **Public evidence update:** includes the B09 public computational run completed on 11 November 2026, which was **not** part of the original 7 November snapshot.
 - **Publication level:** public research assessment; **not** an external peer-reviewed article, institutional endorsement, new experiment, or an independent verification certificate.
 - **Disclosure boundary:** intentionally omits private repository paths, internal system integration arrangements, implementation-level details, proprietary code, model artifacts, candidate keys, private contacts and any other unreleased research material.
