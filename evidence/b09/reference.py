@@ -219,7 +219,7 @@ def run(zl: bytes, it: bytes, null_trials: int = 30) -> dict:
     split = fixed_split(left, right)
     return {
         "experiment": "B09-OPEN-001",
-        "created_utc_date": "2026-11-11",
+        "protocol_release_date": "2026-11-11",
         "research_task": "Held-out unseen-spelling collisions after fixed glyph deletion",
         "source_sha256": {k: v["sha256"] for k, v in SOURCES.items()},
         "source_urls": {k: v["url"] for k, v in SOURCES.items()},
@@ -265,6 +265,7 @@ def main() -> None:
               f"aeioy {z['remove_aeioy']['matched_oov_rate']:.6f}; "
               f"dklrs {z['remove_dklrs_control']['matched_oov_rate']:.6f}; "
               f"random median {z['random_same_deletion_count_null']['median']:.6f}; "
+              f"ambiguous among matches {z['remove_aeioy']['ambiguous_matched_token_fraction']:.6f}; "
               "semantics NOT_ESTIMABLE")
     print(f"Derived summary saved: {args.out}; no corpus bytes saved.")
 
