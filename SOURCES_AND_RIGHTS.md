@@ -20,7 +20,7 @@ Internal exploratory work has referred to **ZL3b** and **IT2a/Takahashi** transc
 - Any future distribution of transcription data must carry the upstream credit, source/version reference, and relevant terms of use.
 - Any future reproduction of Yale images, facsimiles, third-party editions, cipher samples, or derived data must undergo source-specific permission and rights review.
 
-**No raw third-party transcriptions, manuscript images, historical-edition texts, published cipher datasets, or proprietary Sherlock research code are included in this public repository.** The new [B09 reference evaluator](evidence/b09/README.md) is a separate, non-proprietary public experiment script; it downloads source transcriptions transiently from pinned upstream URLs and checks their exact SHA-256 hashes.
+**No raw third-party transcriptions, manuscript images, historical-edition texts, published cipher datasets, or proprietary Sherlock research code are included in this public repository.** The [B09](evidence/b09/README.md) and [B10](evidence/b10/README.md) reference evaluators are separate public experiment scripts, not proprietary Sherlock components. They retrieve source transcriptions transiently from pinned upstream URLs and verify exact SHA-256 hashes.
 
 ## Source-specific clarification for the first public computation
 
