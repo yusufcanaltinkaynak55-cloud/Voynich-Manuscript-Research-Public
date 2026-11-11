@@ -35,7 +35,7 @@ Sherlock is an experimental research program, not a proven Voynich decoder. The 
 
 **Four distinct tasks must be reported separately:** generating plausible-looking tokens, predicting missing written forms, recovering a known cipher's hidden answer, and deciphering an unknown historical manuscript. Their accuracy figures cannot be combined into one “percentage read.”
 
-The private Sherlock system is **not included in this repository**. The publicly released B09 reference evaluator is a separate, narrowly scoped research program.
+The private Sherlock system is **not included in this repository**. The publicly released B09 and B10 reference evaluators are separate, narrowly scoped computational benchmarks, not the Sherlock private system.
 
 ## 2. Evidence currently available and its limitations
 
@@ -51,7 +51,7 @@ The detailed private inventory has not been released as an independently reprodu
 
 Internal predictive experiments have reported improvements over specified character-level baselines for particular held-out spelling tasks. Their scientific interpretation remains **limited to those tasks**; these results are not phonetic readings or historical decoding results.
 
-Because the full relevant private evaluation implementations and run manifests are not public here, the results should be treated as **internally reported and awaiting independent verification**. The public [results ledger](RESULTS.md) identifies which studies have not yet been rerun openly.
+Because the full private Sherlock evaluation implementations and run manifests are not public here, its internal-only findings remain **awaiting independent verification**. Two narrower, non-proprietary benchmark questions, B09 and B10, have successful public reference computations. The public [results ledger](RESULTS.md) identifies their exact scope.
 
 ### 2.3 An actual public repeatability result: B09
 
@@ -69,7 +69,13 @@ The separately published [B09-OPEN-001 evidence package](evidence/b09/README.md)
 
 The folios were used in earlier private exploration. Public computational reproducibility is therefore **not a new blind discovery**, and independent external scientific verification remains pending. The two transcription versions are not two independent historical sources.
 
-### 2.4 Competing mechanisms and negative evidence
+### 2.4 A second public benchmark: B10 spelling reconstruction
+
+The [B10-OPEN-001 public reference experiment](evidence/b10/RESULTS.md) tested the more difficult task of selecting an observed original **EVA spelling** from the competing spellings that collapse to one reduced code. In the initial successful public run, restricted-eligible contextual top-1 accuracy was **53.90%** on ZL3b and **53.05%** on IT2a, compared with position-only **53.60% / 53.18%** and simple codebook frequency **53.29% / 52.86%**. The eligible sets were **4,659 / 4,616** written-form instances whose actual spelling already occurred among training candidates. Previously unseen spellings were **not generatable** by this model.
+
+Contextual log-loss improved slightly in both transcriptions, but **IT2a's folio-bootstrap interval for that small gain included zero** and its contextual top-1 score was below the position-only benchmark. Left and right neighbour codes were used: this is **bidirectional written-form reconstruction, not historical left-to-right decryption**. The benchmark was computationally rerun in GitHub Actions, not independently verified by an outside researcher.
+
+### 2.5 Competing mechanisms and negative evidence
 
 Several experimental directions in the private research record have encountered limitations that must be retained:
 
@@ -148,7 +154,7 @@ Increasing model size or computing power does not, by itself, resolve an identif
 5. Human-directed research has used AI assistance in drafting, software development and hypothesis exploration. AI participation does not independently authenticate historical conclusions.
 6. An external evaluation can be valuable even when proprietary implementation is withheld, provided that access limitations, grading independence, and the resulting reproducibility limits are explicitly reported.
 
-For the first open reference experiment, see [B09 evidence and protocol](evidence/b09/README.md), [measured public results](evidence/b09/RESULTS.md) and the [independent replication request](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/issues/1). For the rest of the research, see [METHODOLOGY.md](METHODOLOGY.md), [RESULTS.md](RESULTS.md), and [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
+For public reference benchmarks, see [B09](evidence/b09/RESULTS.md) and [B10](evidence/b10/RESULTS.md), plus the [B09 independent replication request](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/issues/1). For the rest of the research, see [METHODOLOGY.md](METHODOLOGY.md), [RESULTS.md](RESULTS.md), and [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
 
 ## Final judgment
 
@@ -161,7 +167,7 @@ The next credible milestone is **not a larger claimed reading percentage**. It i
 ### Provenance, scope and revision note
 
 - **Source:** internal laboratory document KBR-001 (the original Turkish-language *Koçi Bey Report*), dated **7 November 2026**, adapted and condensed for public disclosure on **11 November 2026**.
-- **Public evidence update:** includes the B09 public computational run completed on 11 November 2026, which was **not** part of the original 7 November snapshot.
+- **Public evidence update:** includes the B09 and B10 public computational runs completed on 11 November 2026, which was **not** part of the original 7 November snapshot.
 - **Publication level:** public research assessment; **not** an external peer-reviewed article, institutional endorsement, new experiment, or an independent verification certificate.
 - **Disclosure boundary:** intentionally omits private repository paths, internal system integration arrangements, implementation-level details, proprietary code, model artifacts, candidate keys, private contacts and any other unreleased research material.
 - **Rights:** this repository's original research documents have no blanket reuse license assigned as of this edition; see [SOURCES_AND_RIGHTS.md](SOURCES_AND_RIGHTS.md).
