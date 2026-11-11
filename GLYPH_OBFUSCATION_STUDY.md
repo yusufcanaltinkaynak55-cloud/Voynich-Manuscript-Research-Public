@@ -8,7 +8,7 @@
 
 > **Central finding:** Removing certain symbols from a Voynich transcription creates many matches to other *written forms*. It has **not** produced independently verified historical word readings, a language identification, or a translation. In fact, much of the apparent coverage arises because the transformation merges numerous different spellings into the same code.
 
-This document is an **English-language, disclosure-safe synthesis** of dated internal experiments, not a new execution of every experiment. One narrow sub-result, the B09 code-collision metric, has been publicly reimplemented and executed in [B09-OPEN-001](evidence/b09/README.md). **Most of B10–B16 cannot yet be independently reproduced from this public repository.** Private source code, training assets, model weights, candidate keys, and unpublished materials are not disclosed.
+This document is an **English-language, disclosure-safe synthesis** of dated internal experiments, not a new execution of every experiment. One narrow sub-result, the B09 code-collision metric, has been publicly reimplemented and executed in [B09-OPEN-001](evidence/b09/README.md). **A restricted B10 candidate-selection benchmark has also been publicly run**, but it cannot justify an open-ended manuscript decoding claim. The remaining B11–B16 computations are **not yet independently reproducible from this public repository**. Private source code, training assets, model weights, candidate keys, and unpublished materials are not disclosed.
 
 ## 1. Research question
 
@@ -36,7 +36,7 @@ The B09 public reference evaluator:
 - Measures the fraction of **test spellings absent from the training vocabulary** whose *transformed codes* occur in the transformed training vocabulary.
 - Compares fixed `aeioy` deletion with fixed `dklrs` deletion and 30 controls that remove the same number of randomly selected character positions per word.
 
-The public [B09 run and exact computational results](evidence/b09/RESULTS.md) are inspectable. Later studies may reuse folios already examined in earlier exploratory experiments. Consequently, their recorded held-out tests should **not** be presented as completely untouched, prospective blind tests.
+The public [B09 run and exact computational results](evidence/b09/RESULTS.md) and [restricted B10 candidate-selection public benchmark](evidence/b10/RESULTS.md) are inspectable. Later studies may reuse folios already examined in earlier exploratory experiments. Consequently, their recorded held-out tests should **not** be presented as completely untouched, prospective blind tests.
 
 The eight comparator **texts** used in the internal B15/B16 summaries include three Latin sources, Italian, Ottoman Turkish, two Arabic sources, and Persian. This is **eight texts, not eight independent languages**, and their metrics do not define a universal range for all natural languages.
 
@@ -97,12 +97,12 @@ In B16, the positive control based on an artificially encoded Latin sample moved
 4. **Non-universal controls:** the random deletion null matches the count of removed symbols, not all phonotactic or morphological confounds.
 5. **Variable segmentation:** EVA units are convenient editorial representations, not settled historical phonemes.
 6. **Calibration limitations:** in B15/B16 the preregistered method-discrimination criterion was not met, even where descriptive contrasts looked informative.
-7. **Release gap:** outside B09, complete executable workflows and input manifests for these historical internal measurements are not yet available in this public repository.
+7. **Release gap:** outside the narrowly scoped B09 and B10 public benchmark reproductions, complete executable workflows and input manifests for the remaining historical internal measurements are not yet available in this public repository.
 8. **No independent semantic ground truth:** therefore there is no evidence chain from an EVA spelling through verified historical sound or meaning to a translated Voynich sentence.
 
 ## 6. Next independently testable steps
 
-1. **Publish a second narrowly scoped, rights-cleared package** reproducing either B10's full-form candidate selection or B17's line-order statistics with all baselines and immutable source references.
+1. **Seek an independent review of the now-published B10 reference benchmark**, then prepare a separate, rights-cleared B17 line-order experiment with all baselines and immutable source references.
 2. **Measure ambiguity explicitly** in any proposed root/codebook approach: report both coverage and how many original forms map to each transformed code.
 3. **Test against stronger controls** including matched natural-language corpora, position- and length-aware deletions, and equal-capacity competing mechanisms.
 4. **Use prospective evaluation.** Freeze transformation and scoring rules before applying them to new, genuinely untouched evidence. Declare any overlap with past exploratory folios.
