@@ -14,6 +14,7 @@
 | Deleting `dklrs`: control collision rate | 0.610286 (61.03%) | 0.615942 (61.59%) |
 | Equal-deletion-count random-position control: 30-trial median | 0.475429 (47.54%) | 0.489648 (48.96%) |
 | Observed difference: `aeioy` minus `dklrs` | **0.147428** (+14.74 pp) | **0.133540** (+13.35 pp) |
+| Matched instances whose code maps to multiple training spellings | **0.853695** (85.37%) | **0.853591** (85.36%) |
 
 **Interpretation:** On this **previously explored, folio-partitioned** dataset, a fixed five-character deletion transformation produces more transformed **spelling collisions** than these two controls. It does not demonstrate that those five signs represent vowels, nulls, diacritics, or a historical decipherment key.
 
