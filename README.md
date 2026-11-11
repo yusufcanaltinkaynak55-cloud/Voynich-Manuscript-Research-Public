@@ -25,6 +25,7 @@ The code is a **reference reimplementation**, not the private Sherlock software.
 | Document | Purpose |
 | --- | --- |
 | [HYPOTHESES.md](HYPOTHESES.md) | Competing hypotheses, limitations, and falsification criteria |
+| [GLYPH_OBFUSCATION_STUDY.md](GLYPH_OBFUSCATION_STUDY.md) | English-language scientific synthesis of B08–B16: glyph deletion, collisions, controls, and negative results |
 | [SHERLOCK_SCIENTIFIC_ASSESSMENT.md](SHERLOCK_SCIENTIFIC_ASSESSMENT.md) | Public Koçi Bey (KBR-001) scientific assessment: Sherlock's capabilities, limitations, evidence gates and roadmap |
 | [evidence/b09/README.md](evidence/b09/README.md) | First public real-data reproduction package and verified run |
 | [METHODOLOGY.md](METHODOLOGY.md) | Research design, controls, leakage risks, and evidence standards |
@@ -62,6 +63,10 @@ The manuscript is held by the **Beinecke Rare Book & Manuscript Library, Yale Un
 - [Sources, provenance, and rights](SOURCES_AND_RIGHTS.md)
 
 This project is independent. It is **not affiliated with, endorsed by, or a decipherment announcement from Yale University**.
+
+## Language of this public repository
+
+**English is the publication language** for all public-facing reports, repository documentation, code comments, workflow descriptions, issue discussions, and contribution proposals. Names of people and historical report titles (e.g., **Koçi Bey**) are preserved as proper nouns; any substantial non-English quotation must include an English rendering. This convention does not change the private laboratory's language or source-document originals.
 
 ## Participation and citation
 
