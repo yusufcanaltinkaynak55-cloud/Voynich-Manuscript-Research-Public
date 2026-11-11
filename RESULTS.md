@@ -1,11 +1,21 @@
 # Results and limitations ledger
 
 **Public summary prepared:** 11 November 2026.  
-**Source status:** Summaries of dated **internal** laboratory records. The underlying private code, raw datasets, fixed environment manifests, and complete logs have **not been published in this repository**. The entries below are therefore **not independently reproducible from this public record**.
+**Source status:** Most items below are summaries of dated **internal** laboratory records. Their underlying private code, raw datasets, fixed environment manifests, and complete logs have **not been published**. **Exception:** the narrow B09 transformed-spelling collision statistic now has a separately documented, publicly runnable reference evaluator. This does **not** independently reproduce other experiments or establish any decipherment.
 
 ## Overall conclusion
 
 **No independently verified Voynich reading key, pronunciation system, word meaning, or translation has been established by this project.** The manuscript's semantic decipherment accuracy is **NOT ESTIMABLE** without an independently validated reference. This is different from proving that a model has 0% ability.
+
+## First successful public real-data calculation: B09-OPEN-001
+
+The [B09-OPEN-001 package](evidence/b09/README.md) was run successfully on GitHub Actions on **11 November 2026** using immutable ZL3b/IT2a input versions with checked SHA-256 hashes. Its results match the previous internal B08/B09 aggregate collision measurements:
+
+- ZL3b: **875** unseen-spelling test occurrences, `aeioy` transformation **75.77%**, `dklrs` control **61.03%**, random-position control median **47.54%**.
+- IT2a: **966** such occurrences, `aeioy` **74.95%**, `dklrs` **61.59%**, random control median **48.96%**.
+- [Actual measured values, code, limits, and run link](evidence/b09/RESULTS.md).
+
+This is **reproduction of a structural many-to-one code-match measurement** on already explored folios. It is **not** an independently verified reading of even one Voynich word. Independent outside replication remains pending.
 
 ## Internal findings: precise claims only
 
@@ -17,7 +27,7 @@
 | **CFT-001 / 9 Nov 2026**, cipher-family comparison | A published Naibbe-style variable-length/homophonic construction exhibited **partial structural resemblance**, but the tested example missed important adjacent-word similarity behavior. Simplified competitor models also failed some criteria. | **EXPLORATORY / INCONCLUSIVE.** The published Naibbe control was added as a clearly documented exploratory extension, not treated as an untouched prospective test. The cipher family of Voynich was not identified. |
 | **SHERLOCK-NAIBBE-BLIND-001 / 9 Nov 2026**, known-cipher benchmark | In the internally recorded test, normalized full-string **edit similarity** was **26.9953%** for a restricted one-output-symbol-to-one-letter approach versus **24.6479%** for its frequency baseline, a **2.3474-percentage-point** difference. | **CALIBRATION / NEGATIVE LIMITED RESULT.** This is **not** 27% correctly read letters. The plaintext was **not** recovered, the historical cipher key was **not** recovered, and the one-to-one output assumption cannot express the known cipher's variable-length output. The two reported Python-version runs are not independent scientific replication. |
 
-**Caution regarding source scope:** These values reflect archived internal reports reviewed for this initial disclosure. They have not been recomputed in the public repository; any numerical revision must identify its new dataset, version, and run. Percentages from different prediction tasks must not be combined or projected into “number of Voynich words read.”
+**Caution regarding source scope:** The *internal-summary table* values reflect archived internal reports reviewed for this initial disclosure. They have not been recomputed in the public repository; any numerical revision must identify its new dataset, version, and run. Percentages from different prediction tasks must not be combined or projected into “number of Voynich words read.”
 
 ## Interpretations not established
 
@@ -31,8 +41,8 @@
 
 ## Known evidence gaps
 
-1. **Publicly released provenance:** exact corpora and permissions, immutable source references, hashes, and preprocessing.
-2. **Executable benchmark:** frozen scripts, seeds, parameter settings, baseline definitions, and machine-readable results.
+1. **Publicly released provenance for remaining studies:** exact corpora and permissions, immutable source references, hashes, and preprocessing. B09 has a scoped source manifest and public reference pipeline.
+2. **Executable benchmarks for remaining studies:** frozen scripts, seeds, parameter settings, baseline definitions, and machine-readable results. B09 has a scoped runnable public implementation.
 3. **True external holdout:** folios or independent historical witnesses not repeatedly used in exploratory model selection.
 4. **Image-to-text linkage:** reviewed folio/line/glyph coordinates and uncertainty annotations.
 5. **Historical validation:** independently sourced, falsifiable glyph-to-reading-to-meaning chains.
