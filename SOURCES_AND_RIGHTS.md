@@ -20,7 +20,11 @@ Internal exploratory work has referred to **ZL3b** and **IT2a/Takahashi** transc
 - Any future distribution of transcription data must carry the upstream credit, source/version reference, and relevant terms of use.
 - Any future reproduction of Yale images, facsimiles, third-party editions, cipher samples, or derived data must undergo source-specific permission and rights review.
 
-**No raw third-party transcriptions, manuscript images, historical-edition texts, published cipher datasets, or proprietary research code are included in this initial public repository.**
+**No raw third-party transcriptions, manuscript images, historical-edition texts, published cipher datasets, or proprietary Sherlock research code are included in this public repository.** The new [B09 reference evaluator](evidence/b09/README.md) is a separate, non-proprietary public experiment script; it downloads source transcriptions transiently from pinned upstream URLs and checks their exact SHA-256 hashes.
+
+## Source-specific clarification for the first public computation
+
+ZL3b (René Zandbergen and Gabriel Landini) and IT2a (Takeshi Takahashi) are credited individually in the [B09-OPEN-001 manifest](evidence/b09/README.md). The originating [voynich.nu rights statement](https://www.voynich.nu/roadmap.html) makes its listed transcription material available under **CC0**, with acknowledgement requested. That **source-material status does not automatically license the original scripts or documentation in this repository**; these remain without a chosen reuse license.
 
 ## Prior work and related literature
 
