@@ -25,6 +25,7 @@ The code is a **reference reimplementation**, not the private Sherlock software.
 | Document | Purpose |
 | --- | --- |
 | [HYPOTHESES.md](HYPOTHESES.md) | Competing hypotheses, limitations, and falsification criteria |
+| [SHERLOCK_SCIENTIFIC_ASSESSMENT.md](SHERLOCK_SCIENTIFIC_ASSESSMENT.md) | Public Koçi Bey (KBR-001) scientific assessment: Sherlock's capabilities, limitations, evidence gates and roadmap |
 | [evidence/b09/README.md](evidence/b09/README.md) | First public real-data reproduction package and verified run |
 | [METHODOLOGY.md](METHODOLOGY.md) | Research design, controls, leakage risks, and evidence standards |
 | [RESULTS.md](RESULTS.md) | Dated exploratory findings, negative results, and what they **do not** establish |
