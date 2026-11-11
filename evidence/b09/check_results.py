@@ -24,6 +24,7 @@ def validate(actual: dict, expected: dict) -> None:
             "remove_aeioy_rate": a["remove_aeioy"]["matched_oov_rate"],
             "remove_dklrs_rate": a["remove_dklrs_control"]["matched_oov_rate"],
             "random_median_rate": a["random_same_deletion_count_null"]["median"],
+            "ambiguous_match_fraction": a["remove_aeioy"]["ambiguous_matched_token_fraction"],
         }
         for key, observed in fields.items():
             if observed != e[key]:
