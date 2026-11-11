@@ -10,12 +10,14 @@
     "oov_test_tokens": 875,
     "remove_aeioy_rate": 0.757714,
     "remove_dklrs_rate": 0.610286,
-    "random_median_rate": 0.475429
+    "random_median_rate": 0.475429,
+    "ambiguous_match_fraction": 0.853695
   },
   "IT2a": {
     "oov_test_tokens": 966,
     "remove_aeioy_rate": 0.749482,
     "remove_dklrs_rate": 0.615942,
-    "random_median_rate": 0.489648
+    "random_median_rate": 0.489648,
+    "ambiguous_match_fraction": 0.853591
   }
 }
