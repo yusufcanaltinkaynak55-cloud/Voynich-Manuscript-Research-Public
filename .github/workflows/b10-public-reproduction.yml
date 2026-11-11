@@ -1,0 +1,57 @@
+name: Public B10 full-spelling reconstruction benchmark
+
+on:
+  push:
+    paths:
+      - 'evidence/b10/**'
+      - '.github/workflows/b10-public-reproduction.yml'
+  pull_request:
+    paths:
+      - 'evidence/b10/**'
+      - '.github/workflows/b10-public-reproduction.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Synthetic regression tests
+        run: python -m unittest discover -s evidence/b10 -p 'test_*.py' -v
+      - name: Real ZL3b and IT2a benchmark with pinned-source hash validation
+        run: |
+          python evidence/b10/reference.py --download --null-reps 99 --bootstrap-reps 500 --out /tmp/b10-public-results.json
+      - name: Ensure scores cannot be misrepresented as decipherment
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('/tmp/b10-public-results.json',encoding='utf-8'))
+          assert r['experiment']=='B10-OPEN-001'
+          assert r['semantic_decipherment_accuracy']=='NOT_ESTIMABLE'
+          assert r['historically_independent_corpora'] is False
+          assert r['previously_explored_folios'] is True
+          assert r['fairer_context_model_grid'] is True
+          assert r['bidirectional_context_required'] is True
+          for w in ('ZL3b','IT2a'):
+              e=r['transcriptions'][w]
+              assert e['coverage']['ambiguous_evaluable'] >= 1000
+              assert e['frequency_baseline']['top1'] is not None
+              assert e['position_only']['top1'] is not None
+              assert e['position_and_neighbour_codes']['top1'] is not None
+              assert e['neighbour_code_permutation_control']['permutations']==99
+              assert e['context_gain_over_position']['informative_folios']>=10
+          print('B10 real corpus evidence contract PASS, semantics NOT ESTIMABLE')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: b10-public-eva-spelling-reconstruction-not-decipherment
+          path: /tmp/b10-public-results.json
+          if-no-files-found: error
+          retention-days: 90
