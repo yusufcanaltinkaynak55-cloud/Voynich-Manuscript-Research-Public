@@ -1,0 +1,61 @@
+name: Public B09 orthographic collision reproduction
+
+on:
+  push:
+    paths:
+      - 'evidence/b09/**'
+      - '.github/workflows/b09-public-reproduction.yml'
+  pull_request:
+    paths:
+      - 'evidence/b09/**'
+      - '.github/workflows/b09-public-reproduction.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Unit tests on synthetic data
+        run: python -m unittest discover -s evidence/b09 -p 'test_*.py' -v
+
+      - name: Fetch pinned real corpus and reproduce B09 aggregate results
+        run: |
+          python evidence/b09/reference.py --download --trials 30 --out /tmp/b09-public-result.json
+
+      - name: Validate evidence output contract
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('/tmp/b09-public-result.json')
+          r = json.loads(p.read_text(encoding='utf-8'))
+          assert r['experiment'] == 'B09-OPEN-001'
+          assert r['semantic_accuracy'] == 'NOT_ESTIMABLE'
+          assert r['same_historical_manuscript'] is True
+          assert r['previously_explored_holdout'] is True
+          assert len(r['split_folios']) == 3
+          for name in ('ZL3b', 'IT2a'):
+              v = r['results'][name]
+              assert v['oov_test_tokens'] > 100
+              assert v['remove_aeioy']['matched_oov_rate'] is not None
+              assert v['remove_dklrs_control']['matched_oov_rate'] is not None
+              assert v['random_same_deletion_count_null']['trials'] == 30
+          print('Evidence schema PASS. No semantic decipherment claimed.')
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: b09-public-orthographic-collisions-not-decipherment
+          path: /tmp/b09-public-result.json
+          if-no-files-found: error
+          retention-days: 90
