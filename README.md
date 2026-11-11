@@ -10,6 +10,12 @@ This repository presents a carefully scoped public record of computational and h
 
 The public repository is **not** a mirror of the private research environment. It does not contain the proprietary Sherlock research implementation, model weights, unpublished candidate keys, private correspondence, credentials, or third-party raw corpora and manuscript images. Some summarized results originate in internal experiment records and **cannot yet be reproduced from this public release**. An exception is the narrowly defined **B09 spelling-collision calculation**, for which a public reference program and successful GitHub Actions run are now available. This is computational repeatability, **not independent semantic verification**.
 
+## Public evidence packages and scientific assessments
+
+The repository now includes two **separate reference benchmark implementations**. B09 has successfully reproduced its structural aggregate statistics; [B10](evidence/b10/README.md) evaluates a more demanding full-spelling selection task with equal model-selection opportunities for position-only and contextual variants. The existence of runnable code or a CI workflow is **not evidence that the tests passed**, unless a completed run is linked and evaluated.
+
+The [Sherlock Model Card](SHERLOCK_MODEL_CARD.md) discloses the private system's intended research uses and limitations without opening proprietary code. The [cipher-family comparison](CIPHER_FAMILY_COMPARISON.md) summarizes exploratory internal CFT-001 measurements and prior academic work; that entire experiment is **not** independently reproducible from this public repository.
+
 ## First publicly runnable real-data evidence package
 
 **[B09-OPEN-001: unseen-spelling code collisions](evidence/b09/README.md)** is a small, transparent Python-standard-library test on version-pinned ZL3b and IT2a transcriptions. Both inputs are independently downloaded and hash-checked; a folio-partitioned OOV test compares deletion of `aeioy` against deletion of `dklrs` and 30 matched-deletion-count randomized controls. This explicitly tests **spelling collisions, not decipherment**.
@@ -26,6 +32,9 @@ The code is a **reference reimplementation**, not the private Sherlock software.
 | --- | --- |
 | [HYPOTHESES.md](HYPOTHESES.md) | Competing hypotheses, limitations, and falsification criteria |
 | [GLYPH_OBFUSCATION_STUDY.md](GLYPH_OBFUSCATION_STUDY.md) | English-language scientific synthesis of B08–B16: glyph deletion, collisions, controls, and negative results |
+| [evidence/b10/README.md](evidence/b10/README.md) | Public B10 full-form selection benchmark, with improved fair baseline grid and automatic tests |
+| [SHERLOCK_MODEL_CARD.md](SHERLOCK_MODEL_CARD.md) | Public Sherlock capabilities, limitations, research boundaries, and evaluation requirements |
+| [CIPHER_FAMILY_COMPARISON.md](CIPHER_FAMILY_COMPARISON.md) | CFT-001 structural cipher and copy-modify comparison; external comparators and negative evidence |
 | [SHERLOCK_SCIENTIFIC_ASSESSMENT.md](SHERLOCK_SCIENTIFIC_ASSESSMENT.md) | Public Koçi Bey (KBR-001) scientific assessment: Sherlock's capabilities, limitations, evidence gates and roadmap |
 | [evidence/b09/README.md](evidence/b09/README.md) | First public real-data reproduction package and verified run |
 | [METHODOLOGY.md](METHODOLOGY.md) | Research design, controls, leakage risks, and evidence standards |
