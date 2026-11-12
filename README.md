@@ -35,6 +35,7 @@ The publicly released reference scripts were written separately from the **priva
 | **[Research roadmap](RESEARCH_ROADMAP.md)** | Delivered stages, unmet scientific acceptance gates, independently auditable next steps |
 | **[Evidence index](evidence/README.md)** | All three public real-data experiments, versions, software and reviewer status |
 | **[Selected literature](REFERENCES.md)** | Confirmed prior academic work, primary source attributions and novelty limits |
+| **[Change log](CHANGELOG.md)** | Dated public research updates, corrections, earlier failed CI runs, and outstanding scientific limitations |
 | **[Sherlock Model Card](SHERLOCK_MODEL_CARD.md)** | Intended uses, supported measurements, methodological limitations and disclosure boundaries |
 | **[Koçi Bey scientific assessment](SHERLOCK_SCIENTIFIC_ASSESSMENT.md)** | Critical programme review, six principal obstacles and three acceptance gates |
 | **[Hypothesis register](HYPOTHESES.md)** | Competing, falsifiable claims and their current evidential status |
