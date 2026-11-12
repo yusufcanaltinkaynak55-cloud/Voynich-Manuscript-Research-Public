@@ -24,7 +24,7 @@ What changed and why? State whether this is an editorial correction, code qualit
 - [ ] No private Sherlock source, model weights, candidate keys or private research records.
 - [ ] No API keys, credentials, personal data, or unauthorized third-party text and image assets.
 - [ ] No unapproved license or copyright change.
-- [ ] Public [research quality audit](scripts/audit_public_repo.py) and affected tests pass, or failures are explained.
+- [ ] Public [research quality audit](../scripts/audit_public_repo.py) and affected tests pass, or failures are explained.
 
 ## Reviewer notes
 
