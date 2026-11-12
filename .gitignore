@@ -1,0 +1,25 @@
+# Local runtime, source bytes and secrets must never be published.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.*
+*.pem
+*.p12
+*.pfx
+*.key
+*.sqlite
+*.sqlite3
+.DS_Store
+out/
+artifacts/
+cache/
+data/raw/
+data/private/
+transcriptions/raw/
+models/
+checkpoints/
+private/
+secrets/
