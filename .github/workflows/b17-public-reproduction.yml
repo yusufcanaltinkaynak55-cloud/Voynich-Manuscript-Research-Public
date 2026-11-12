@@ -52,6 +52,8 @@ jobs:
               assert q['word_pair_direction']['n_distinct_spelling_pairs']==q['shuffled_training_null']['n_distinct_spelling_pairs']
           print('B17_PUBLIC_EVIDENCE_CONTRACT_PASS: no historical decipherment inferred')
           PY
+      - name: Regression-check first public-run aggregate metrics
+        run: python evidence/b17/check_results.py --actual /tmp/b17-open-result.json
       - name: Upload derived statistics only
         uses: actions/upload-artifact@v4
         with:
