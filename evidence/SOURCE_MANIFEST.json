@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "updated": "2026-11-12",
+  "historical_object": {
+    "repository_label": "Yale Beinecke MS 408",
+    "repository_url": "https://collections.library.yale.edu/catalog/2002046",
+    "statement": "One physical manuscript; electronic transcriptions are not independent historical witnesses"
+  },
+  "source_manifest": [
+    {
+      "id": "ZL3b",
+      "label": "ZL3b IVTFF editorial Voynich transcription",
+      "attribution": "René Zandbergen and Gabriel Landini",
+      "provider_repository": "Aspect-Research/voynich-autoexploration",
+      "pinned_commit": "31819c914061cc6b63bbf4983e33d643ede52e46",
+      "raw_url": "https://raw.githubusercontent.com/Aspect-Research/voynich-autoexploration/31819c914061cc6b63bbf4983e33d643ede52e46/data/transcriptions/eva_zl3b.txt",
+      "sha256": "bf5b6d4ac1e3a51b1847a9c388318d609020441ccd56984c901c32b09beccafc",
+      "file_embedded_in_public_repository": false
+    },
+    {
+      "id": "IT2a",
+      "label": "IT2a/Takahashi editorial Voynich transcription",
+      "attribution": "Takeshi Takahashi",
+      "provider_repository": "noah-chelednik/voynich-data",
+      "pinned_commit": "ecd4c8145524d90373535ea3d1617d8190dc8208",
+      "raw_url": "https://raw.githubusercontent.com/noah-chelednik/voynich-data/ecd4c8145524d90373535ea3d1617d8190dc8208/data_sources/cache/IT2a-n.txt",
+      "sha256": "7f27a8b0feed8f6de0a99900df6bf912dd1d295c38e5f830bac8b41c3f536fb5",
+      "file_embedded_in_public_repository": false
+    }
+  ],
+  "license_and_rights_note": "See source publisher's rights and attribution statement at https://www.voynich.nu/roadmap.html and the repository SOURCES_AND_RIGHTS.md. Redistribution rights must be checked per source and scope; this manifest is not a license grant.",
+  "public_benchmarks": [
+    "B09-OPEN-001",
+    "B10-OPEN-001",
+    "B17-OPEN-001"
+  ],
+  "security_and_validity": {
+    "source_bytes_committed": false,
+    "private_sherlock_included": false,
+    "input_sha256_verified_at_runtime": true,
+    "semantic_decipherment_accuracy": "NOT_ESTIMABLE"
+  },
+  "data_access_policy": "Reference Python scripts download pinned, upstream public bytes at runtime; local raw data should not be committed."
+}
