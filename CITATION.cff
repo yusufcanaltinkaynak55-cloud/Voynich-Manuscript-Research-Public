@@ -4,6 +4,7 @@ title: "Voynich Manuscript Research: Public Hypotheses, Methods, and Results Rec
 authors:
   - family-names: "Altınkaynak"
     given-names: "Yusuf Can"
+    orcid: "https://orcid.org/0009-0007-5670-9122"
 url: "https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public"
 abstract: "Independent exploratory research documentation on the Voynich Manuscript (Beinecke MS 408), with explicitly limited claims, hypothesis tests, negative results, and reproducibility safeguards. No validated decipherment is claimed."
 keywords:
@@ -18,5 +19,6 @@ preferred-citation:
   authors:
     - family-names: "Altınkaynak"
       given-names: "Yusuf Can"
+    orcid: "https://orcid.org/0009-0007-5670-9122"
   year: 2026
   url: "https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public"
