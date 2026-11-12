@@ -86,6 +86,10 @@ A new study should **pre-register** the comparators and numerical acceptance cri
 
 A release of CFT-002 source code and machine-readable derived outputs would strengthen auditability, but is **not claimed to have occurred in this document**.
 
+## Literature and novelty provenance
+
+See the [selected and source-checked bibliography](REFERENCES.md) for complete author names, titles and original DOI links for Greshko's Naibbe construction, Timm and Schinner's self-citation model, and Matlach, Janečková and Dostál's symbol-role study. These are **existing contributions by other researchers**, not methods first invented by Sherlock.
+
 ## Related public project materials
 
 - [Scientific status and research gates](SHERLOCK_SCIENTIFIC_ASSESSMENT.md).
