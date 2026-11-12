@@ -1,0 +1,61 @@
+name: Public B17 pairwise order diagnostic
+
+on:
+  push:
+    paths:
+      - 'evidence/b17/**'
+      - 'evidence/b09/reference.py'
+      - '.github/workflows/b17-public-reproduction.yml'
+  pull_request:
+    paths:
+      - 'evidence/b17/**'
+      - 'evidence/b09/reference.py'
+      - '.github/workflows/b17-public-reproduction.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  b17-reference:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: B17 synthetic tests
+        run: python -m unittest discover -s evidence/b17 -p 'test_*.py' -v
+      - name: Pinned-source B17 real-data evaluation
+        run: python evidence/b17/reference.py --download --out /tmp/b17-open-result.json
+      - name: Verify output shape and scientific restrictions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('/tmp/b17-open-result.json')
+          j=json.loads(p.read_text(encoding='utf-8'))
+          assert j['experiment']=='B17-OPEN-001'
+          assert j['not_reimplementation_of_private_b17'] is True
+          assert j['prior_exploration_of_test_folios'] is True
+          assert j['same_physical_manuscript_in_two_transcriptions'] is True
+          assert j['actual_plaintext_or_semantic_accuracy']=='NOT_ESTIMABLE'
+          for name in ('ZL3b','IT2a'):
+              q=j['results'][name]
+              for method in ('word_pair_direction','shuffled_training_null','edge_position_only'):
+                  a=q[method]
+                  assert a['n_distinct_spelling_pairs']>100
+                  assert a['n_folios']>=10
+                  assert 0<=a['pairwise_orientation_accuracy_with_half_credit_ties']<=1
+                  assert len(a['folio_bootstrap95'])==2
+              assert q['word_pair_direction']['n_distinct_spelling_pairs']==q['shuffled_training_null']['n_distinct_spelling_pairs']
+          print('B17_PUBLIC_EVIDENCE_CONTRACT_PASS: no historical decipherment inferred')
+          PY
+      - name: Upload derived statistics only
+        uses: actions/upload-artifact@v4
+        with:
+          name: b17-public-pair-orientation-not-decipherment
+          path: /tmp/b17-open-result.json
+          if-no-files-found: error
+          retention-days: 90
