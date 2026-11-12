@@ -8,6 +8,12 @@ Please write all **public submissions and discussions in English**, including sc
 
 Please do **not** silently translate or rewrite source-transcription records: their literal characters and provenance are scientific data, not interface prose.
 
+## How to participate
+
+Use GitHub's issue form for an **independent replication** or a **scientific correction**, or open a pull request using the repository's [public research review template](.github/pull_request_template.md). The [research roadmap](RESEARCH_ROADMAP.md) identifies open evaluation goals. Contributions should document actual test results, independent sources and failures rather than present undocumented “decoded” readings.
+
+For credentials, private researcher data or code vulnerabilities, **do not submit a public issue**. See [SECURITY.md](SECURITY.md).
+
 ## Useful submissions
 
 - Reproducible tests of one stated structural hypothesis.
