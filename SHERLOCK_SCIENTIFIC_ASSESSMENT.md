@@ -35,7 +35,7 @@ Sherlock is an experimental research program, not a proven Voynich decoder. The 
 
 **Four distinct tasks must be reported separately:** generating plausible-looking tokens, predicting missing written forms, recovering a known cipher's hidden answer, and deciphering an unknown historical manuscript. Their accuracy figures cannot be combined into one “percentage read.”
 
-The private Sherlock system is **not included in this repository**. The publicly released B09 and B10 reference evaluators are separate, narrowly scoped computational benchmarks, not the Sherlock private system.
+The private Sherlock system is **not included in this repository**. The publicly released B09, B10 and B17-OPEN reference evaluators are separate, narrowly scoped computational benchmarks, not the Sherlock private system.
 
 ## 2. Evidence currently available and its limitations
 
@@ -51,7 +51,7 @@ The detailed private inventory has not been released as an independently reprodu
 
 Internal predictive experiments have reported improvements over specified character-level baselines for particular held-out spelling tasks. Their scientific interpretation remains **limited to those tasks**; these results are not phonetic readings or historical decoding results.
 
-Because the full private Sherlock evaluation implementations and run manifests are not public here, its internal-only findings remain **awaiting independent verification**. Two narrower, non-proprietary benchmark questions, B09 and B10, have successful public reference computations. The public [results ledger](RESULTS.md) identifies their exact scope.
+Because the full private Sherlock evaluation implementations and run manifests are not public here, its internal-only findings remain **awaiting independent verification**. Three narrower, non-proprietary benchmark questions, B09, B10 and B17-OPEN, have successful public reference computations. The public [results ledger](RESULTS.md) identifies their exact scope.
 
 ### 2.3 An actual public repeatability result: B09
 
@@ -75,7 +75,11 @@ The [B10-OPEN-001 public reference experiment](evidence/b10/RESULTS.md) tested t
 
 Contextual log-loss improved slightly in both transcriptions, but **IT2a's folio-bootstrap interval for that small gain included zero** and its contextual top-1 score was below the position-only benchmark. Left and right neighbour codes were used: this is **bidirectional written-form reconstruction, not historical left-to-right decryption**. The benchmark was computationally rerun in GitHub Actions, not independently verified by an outside researcher.
 
-### 2.5 Competing mechanisms and negative evidence
+### 2.5 Further public update (12 November 2026): B17-OPEN line orientation
+
+A separate [B17-OPEN public diagnostic](evidence/b17/RESULTS.md) compared directed word-pair orientation with a shuffled-training control and a visible first/last-glyph position baseline. On previously explored held-out folios, pair orientation was approximately **52.54% / 52.52%**, while the visible-edge position diagnostic was **61.16% / 60.35%** on ZL3b / IT2a. These are scores on **word pairs**, not readable tokens or reconstructed full lines. This narrow public calculation is **not** a repetition of the original private B17 beam-search reordering task and does not demonstrate a historical key or meaning.
+
+### 2.6 Competing mechanisms and negative evidence
 
 Several experimental directions in the private research record have encountered limitations that must be retained:
 
@@ -167,7 +171,7 @@ The next credible milestone is **not a larger claimed reading percentage**. It i
 ### Provenance, scope and revision note
 
 - **Source:** internal laboratory document KBR-001 (the original Turkish-language *Koçi Bey Report*), dated **7 November 2026**, adapted and condensed for public disclosure on **11 November 2026**.
-- **Public evidence update:** includes the B09 and B10 public computational runs completed on 11 November 2026, which was **not** part of the original 7 November snapshot.
+- **Public evidence update:** includes the B09 and B10 public computational runs completed on 11 November 2026 and the distinct B17-OPEN public pairwise calculation completed on 12 November 2026, which was **not** part of the original 7 November snapshot.
 - **Publication level:** public research assessment; **not** an external peer-reviewed article, institutional endorsement, new experiment, or an independent verification certificate.
 - **Disclosure boundary:** intentionally omits private repository paths, internal system integration arrangements, implementation-level details, proprietary code, model artifacts, candidate keys, private contacts and any other unreleased research material.
 - **Rights:** this repository's original research documents have no blanket reuse license assigned as of this edition; see [SOURCES_AND_RIGHTS.md](SOURCES_AND_RIGHTS.md).
