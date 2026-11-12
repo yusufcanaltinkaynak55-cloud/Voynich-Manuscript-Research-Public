@@ -1,0 +1,51 @@
+name: Public research publication quality
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '*.md'
+      - '*.cff'
+      - 'evidence/**'
+      - 'scripts/**'
+      - '.github/workflows/repository-quality.yml'
+  pull_request:
+    paths:
+      - '*.md'
+      - '*.cff'
+      - 'evidence/**'
+      - 'scripts/**'
+      - '.github/workflows/repository-quality.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  editorial-qa:
+    name: Publication scope and reference consistency
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify citation, internal links, and release boundaries
+        run: python scripts/audit_public_repo.py
+      - name: B09 synthetic tests
+        run: python -m unittest discover -s evidence/b09 -p 'test_*.py' -v
+      - name: B10 synthetic tests
+        run: python -m unittest discover -s evidence/b10 -p 'test_*.py' -v
+      - name: B17 synthetic tests
+        run: python -m unittest discover -s evidence/b17 -p 'test_*.py' -v
+      - name: Confirm scientific results are not semantic readings
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for series in ('b09','b10','b17'):
+              j=json.loads(Path(f'evidence/{series}/expected_metrics.json').read_text(encoding='utf-8'))
+              assert j['experiment'].lower().startswith(series)
+          print('Public expected results present. Scientific validity still requires outside review.')
+          PY
