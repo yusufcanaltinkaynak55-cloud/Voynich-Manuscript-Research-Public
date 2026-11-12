@@ -1,0 +1,26 @@
+{
+  "experiment": "B17-OPEN-001",
+  "provenance": {
+    "first_public_run_id": 43185657803,
+    "source_commit": "b2a2ddb39063320c008b88a08bca6c397cd3d15c",
+    "date": "2026-11-12",
+    "basis": "Completed GitHub Actions console output; actual source-bound computation"
+  },
+  "ZL3b": {
+    "pairwise_pairs": 19695,
+    "directed_pair_pa": 0.525362,
+    "shuffled_pa": 0.49901,
+    "edge_position_pa": 0.611627,
+    "observed_minus_shuffled": 0.026352
+  },
+  "IT2a": {
+    "pairwise_pairs": 26323,
+    "directed_pair_pa": 0.525225,
+    "shuffled_pa": 0.495574,
+    "edge_position_pa": 0.603503,
+    "observed_minus_shuffled": 0.029651
+  },
+  "semantic_accuracy": "NOT_ESTIMABLE",
+  "external_independent_validation": false,
+  "reproduces_private_B17_full_line_beam_search": false
+}
