@@ -1,0 +1,47 @@
+name: Independent replication or methodological review
+description: Report an independent rerun, a competing baseline, or a reproducibility problem.
+title: "[Replication] "
+body:
+  - type: markdown
+    attributes:
+      value: "Please share only public, authorized information. A CI rerun is not automatically an independent scientific replication, and no task demonstrates a Voynich translation."
+  - type: dropdown
+    id: study
+    attributes:
+      label: Public study
+      options:
+        - B09-OPEN-001
+        - B10-OPEN-001
+        - B17-OPEN-001
+        - General research methods
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Testable claim and review objective
+      description: Describe exactly what you replicated, challenged, or found unclear.
+      placeholder: "I independently reimplemented the stated metric, holding the folio split and source hashes fixed."
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Source and environment provenance
+      description: Provide non-sensitive source version or hash, software/runtime, split and steps. Do not submit raw copyrighted or private material.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Observed result, controls, discrepancies, and failure cases
+      description: Include denominators and clearly distinguish structure from meaning.
+    validations:
+      required: true
+  - type: textarea
+    id: independence
+    attributes:
+      label: Independence and prior exposure
+      description: Explain whether you reused published code, previously explored folios, or the same historical manuscript.
+    validations:
+      required: true
