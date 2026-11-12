@@ -1,7 +1,7 @@
 # Results and limitations ledger
 
 **Public summary prepared:** 11 November 2026.  
-**Source status:** Most items below are summaries of dated **internal** laboratory records. Their underlying private code, raw datasets, fixed environment manifests, and complete logs have **not been published**. **Exceptions:** the narrow B09 transformed-spelling collision statistic and B10 original-spelling candidate-selection benchmark now have separately documented, publicly runnable reference evaluators. This does **not** independently reproduce other experiments or establish any decipherment.
+**Source status:** Most items below are summaries of dated **internal** laboratory records. Their underlying private code, raw datasets, fixed environment manifests, and complete logs have **not been published**. **Exceptions:** three narrow public computational tasks now have runnable reference evaluators: B09 transformed-spelling collisions, B10 restricted original-form candidate selection and B17-OPEN pairwise line-order orientation. These are not equivalent metrics. This does **not** independently reproduce other experiments or establish any decipherment.
 
 ## Overall conclusion
 
@@ -32,6 +32,18 @@ The [B10-OPEN-001 reference benchmark](evidence/b10/README.md) successfully ran 
 
 These figures apply **only** when the correct original EVA spelling is already one of several training candidates under the same shortened code. The benchmark cannot generate unseen spellings and does **not** measure translated words. Test folios were previously examined, and bidirectional neighbour information was used.
 
+## Third successful public real-data diagnostic: B17-OPEN-001
+
+On **12 November 2026**, the [B17-OPEN public pairwise-orientation reference](evidence/b17/README.md) completed a [passing GitHub Actions run](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/runs/43185657803). It analyzed **19,695 / 26,323** different-spelling pairs in held-out ZL3b / IT2a physical P-lines.
+
+- **Directed word-pair orientation:** 0.525362 / 0.525225, with a 0.50 chance reference.
+- **Shuffled training-line control:** 0.499010 / 0.495574.
+- **Visible first/last-EVA-sign positional model:** 0.611627 / 0.603503.
+- **Public decision:** structural direction and line-position signals in this fixed test, **not** deciphered words, a recovered key or a reconstructed line.
+- **Essential non-equivalence:** the private **B17** used whole-line beam-search reordering. **B17-OPEN** is a different, narrower reference diagnostic, so its percentages cannot be numerically compared as if the same task had been rerun.
+
+See the [dated B17-OPEN result and limitations](evidence/b17/RESULTS.md). The same manuscript's two transcriptions are not independent external witnesses, and the evaluation folios have appeared in prior research.
+
 ## Internal findings: precise claims only
 
 | Internal study / date | Observed or reported internal result | Status and limits |
@@ -56,8 +68,8 @@ These figures apply **only** when the correct original EVA spelling is already o
 
 ## Known evidence gaps
 
-1. **Publicly released provenance for remaining studies:** exact corpora and permissions, immutable source references, hashes, and preprocessing. B09 and B10 have scoped source manifests and public reference pipelines.
-2. **Executable benchmarks for remaining studies:** frozen scripts, seeds, parameter settings, baseline definitions, and machine-readable results. B09 and B10 have scoped runnable public implementations.
+1. **Publicly released provenance for remaining studies:** exact corpora and permissions, immutable source references, hashes, and preprocessing. B09, B10 and B17-OPEN have scoped source manifests and public reference pipelines.
+2. **Executable benchmarks for remaining studies:** frozen scripts, seeds, parameter settings, baseline definitions, and machine-readable results. B09, B10 and B17-OPEN have scoped runnable public implementations.
 3. **True external holdout:** folios or independent historical witnesses not repeatedly used in exploratory model selection.
 4. **Image-to-text linkage:** reviewed folio/line/glyph coordinates and uncertainty annotations.
 5. **Historical validation:** independently sourced, falsifiable glyph-to-reading-to-meaning chains.
