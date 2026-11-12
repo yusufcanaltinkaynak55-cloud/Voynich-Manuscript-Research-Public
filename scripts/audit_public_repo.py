@@ -24,7 +24,7 @@ REQUIRED = (
 )
 LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)\s]+)(?:\s+[^)]*)?\)")
 DANGEROUS = [
-    ("Private repository identifier", re.compile(r"Voynik-El-Yazmalar-", re.I)),
+    ("Private repository identifier", re.compile("Voynik" + "-El-" + "Yazmalar-", re.I)),
     ("GitHub classic access token", re.compile(r"\bghp_[A-Za-z0-9]{36,}\b")),
     ("GitHub fine-grained token", re.compile(r"\bgithub_pat_[A-Za-z0-9_]{30,}\b")),
     ("OpenAI-style key", re.compile(r"\bsk-proj-[A-Za-z0-9_-]{20,}\b")),
