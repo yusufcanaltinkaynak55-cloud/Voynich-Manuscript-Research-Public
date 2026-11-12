@@ -36,6 +36,7 @@ Source transcriptions, third-party datasets, original manuscript images, and She
 | --- | --- | --- |
 | Parsing and comparing transcriptional word patterns | Public [B09-OPEN-001](evidence/b09/README.md) reference code, source-hash validation, and successful real-data run | **PUBLIC COMPUTATIONAL REPEATABILITY** for **code-collision statistics only** |
 | Selecting an original EVA spelling from a shortened code | [B10-OPEN-001](evidence/b10/RESULTS.md): successful real-data public run on restricted candidates with explicit fair-grid and coverage controls | **PUBLIC COMPUTATIONAL REPEATABILITY**, not independently validated decoding |
+| Pairwise relative order within real written lines | [B17-OPEN-001](evidence/b17/RESULTS.md): public pair orientation, shuffled-training and visible-edge-position controls | **PUBLIC COMPUTATIONAL DIAGNOSTIC**, not full-line recovery or a private B17 algorithm reproduction |
 | Conditional written-form prediction | Internally reported experiments using fixed validation and test groups, with task-specific baselines | **INTERNAL EXPLORATORY EVIDENCE**, not separately reproduced here |
 | Known-answer cipher solving | Internally recorded calibration runs, with important failures and model-family constraints | **INSUFFICIENT for general cryptanalytic competence** |
 | Recovering an authenticated Voynich key, sounds or meanings | No independently verified key or external semantic ground truth | **NOT ESTABLISHED / NOT ESTIMABLE** |
@@ -69,7 +70,7 @@ A higher number for one task must **never** be advertised as the fraction of the
 
 The code, model architecture, weights, unpublished cryptanalytic candidate keys, special configurations and private source corpora are **not publicly accessible**. A public write-up cannot provide full end-to-end replication of the private Sherlock system. This must be acknowledged wherever internal performance numbers are shown.
 
-The successfully executed public B09 and B10 scripts are **limited experimental reference code**, not Sherlock exports, reverse-engineered components, or proof of model equivalence. Findings remain subject to independent review.
+The successfully executed public B09, B10 and B17 reference scripts are **limited experimental reference code**, not Sherlock exports, reverse-engineered components, or proof of model equivalence. Findings remain subject to independent review.
 
 The programme is human-led and uses AI assistance in hypothesis formation, writing and software development. AI-generated statements are treated as hypotheses or drafts until checked against actual sources, execution logs and counterexamples.
 
