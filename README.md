@@ -7,7 +7,7 @@
 [![B10 reproducibility](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/workflows/b10-public-reproduction.yml/badge.svg)](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/workflows/b10-public-reproduction.yml)
 [![B17 diagnostic](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/workflows/b17-public-reproduction.yml/badge.svg)](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/workflows/b17-public-reproduction.yml)
 
-**Maintainer:** Yusuf Can Altınkaynak  
+**Maintainer:** [Yusuf Can Altınkaynak](RESEARCHER_PROFILE.md) · [ORCID 0009-0007-5670-9122](https://orcid.org/0009-0007-5670-9122)  
 **Research scope:** Computational analysis, historical cipher comparison, testable writing-system hypotheses, and scientific reproducibility  
 **Public record:** Established November 2026; documentation updated **12 November 2026**  
 **Decipherment status:** **No independently verified key, sound system, word meaning, or translation.**
@@ -79,7 +79,7 @@ python evidence/b17/check_results.py --actual /tmp/b17-result.json
 
 ## Contribute, cite and follow the work
 
-Critical assessments, independent reimplementations, corrections and negative findings are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) and the [roadmap](RESEARCH_ROADMAP.md). See [CITATION.cff](CITATION.cff) to cite this *living GitHub research record*, not a peer-reviewed decipherment paper.
+Critical assessments, independent reimplementations, corrections and negative findings are welcome. See the [researcher profile](RESEARCHER_PROFILE.md) and [ORCID identifier](https://orcid.org/0009-0007-5670-9122) for author identity. Start with [CONTRIBUTING.md](CONTRIBUTING.md) and the [roadmap](RESEARCH_ROADMAP.md). See [CITATION.cff](CITATION.cff) to cite this *living GitHub research record*, not a peer-reviewed decipherment paper.
 
 The manuscript is held by [Yale's Beinecke Rare Book & Manuscript Library, MS 408](https://beinecke.library.yale.edu/beinecke/collections/beinecke-cipher-voynich-manuscript). This independent project is **not affiliated with or endorsed by Yale University**.
 
