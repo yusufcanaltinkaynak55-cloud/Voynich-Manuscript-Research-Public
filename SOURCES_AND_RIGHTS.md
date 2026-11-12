@@ -20,11 +20,11 @@ Internal exploratory work has referred to **ZL3b** and **IT2a/Takahashi** transc
 - Any future distribution of transcription data must carry the upstream credit, source/version reference, and relevant terms of use.
 - Any future reproduction of Yale images, facsimiles, third-party editions, cipher samples, or derived data must undergo source-specific permission and rights review.
 
-**No raw third-party transcriptions, manuscript images, historical-edition texts, published cipher datasets, or proprietary Sherlock research code are included in this public repository.** The [B09](evidence/b09/README.md) and [B10](evidence/b10/README.md) reference evaluators are separate public experiment scripts, not proprietary Sherlock components. They retrieve source transcriptions transiently from pinned upstream URLs and verify exact SHA-256 hashes.
+**No raw third-party transcriptions, manuscript images, historical-edition texts, published cipher datasets, or proprietary Sherlock research code are included in this public repository.** The [B09](evidence/b09/README.md), [B10](evidence/b10/README.md) and [B17-OPEN](evidence/b17/README.md) reference evaluators are separate public experiment scripts, not proprietary Sherlock components. They retrieve source transcriptions transiently from pinned upstream URLs and verify exact SHA-256 hashes.
 
 ## Source-specific clarification for the first public computation
 
-ZL3b (René Zandbergen and Gabriel Landini) and IT2a (Takeshi Takahashi) are credited individually in the [B09-OPEN-001 manifest](evidence/b09/README.md). The originating [voynich.nu rights statement](https://www.voynich.nu/roadmap.html) makes its listed transcription material available under **CC0**, with acknowledgement requested. That **source-material status does not automatically license the original scripts or documentation in this repository**; these remain without a chosen reuse license.
+ZL3b (René Zandbergen and Gabriel Landini) and IT2a (Takeshi Takahashi) are credited individually in the [B09-OPEN-001 manifest](evidence/b09/README.md). The full computational [source manifest](evidence/SOURCE_MANIFEST.json) records pinned URLs, commits, hashes and attribution. The originating [voynich.nu rights statement](https://www.voynich.nu/roadmap.html) makes its listed transcription material available under **CC0**, with acknowledgement requested. That **source-material status does not automatically license the original scripts or documentation in this repository**; these remain without a chosen reuse license.
 
 ## Prior work and related literature
 
