@@ -33,6 +33,8 @@ The publicly released reference scripts were written separately from the **priva
 | Publication | What it contains |
 | --- | --- |
 | **[Research roadmap](RESEARCH_ROADMAP.md)** | Delivered stages, unmet scientific acceptance gates, independently auditable next steps |
+| **[Evidence index](evidence/README.md)** | All three public real-data experiments, versions, software and reviewer status |
+| **[Selected literature](REFERENCES.md)** | Confirmed prior academic work, primary source attributions and novelty limits |
 | **[Sherlock Model Card](SHERLOCK_MODEL_CARD.md)** | Intended uses, supported measurements, methodological limitations and disclosure boundaries |
 | **[Koçi Bey scientific assessment](SHERLOCK_SCIENTIFIC_ASSESSMENT.md)** | Critical programme review, six principal obstacles and three acceptance gates |
 | **[Hypothesis register](HYPOTHESES.md)** | Competing, falsifiable claims and their current evidential status |
@@ -69,9 +71,9 @@ python evidence/b17/check_results.py --actual /tmp/b17-result.json
 
 - **Independent validation is not yet complete.** Publicly runnable code and repeat runs are computational evidence, not an external referee's finding. See [reproducibility requirements](REPRODUCIBILITY.md).
 - **Negative results remain visible.** Failed tests, competing models and alternative interpretations are recorded rather than discarded.
-- **Comparative research is credited.** The project does not claim authorship of historical cipher systems or earlier Voynich models; see [CFT-001](CIPHER_FAMILY_COMPARISON.md).
-- **Upstream text and image rights are respected.** Third-party transcriptions are fetched from pinned sources rather than redistributed. See [sources and rights](SOURCES_AND_RIGHTS.md).
-- **No private technology disclosure.** The proprietary Sherlock research system, unpublished code, model weights, candidate keys, private correspondence and secrets are not part of this public repository.
+- **Comparative research is credited.** The project does not claim authorship of historical cipher systems or earlier Voynich models; see [selected academic literature](REFERENCES.md) and [CFT-001](CIPHER_FAMILY_COMPARISON.md).
+- **Upstream text and image rights are respected.** Third-party transcriptions are fetched from pinned sources rather than redistributed. See [source manifest](evidence/SOURCE_MANIFEST.json) and [sources and rights](SOURCES_AND_RIGHTS.md).
+- **No private technology disclosure.** The proprietary Sherlock research system, unpublished code, model weights, candidate keys, private correspondence and secrets are not part of this public repository. See [responsible disclosure guidance](SECURITY.md).
 - **English-only public research communication.** Original personal names, historical titles and primary-source terms remain properly attributed.
 
 ## Contribute, cite and follow the work
