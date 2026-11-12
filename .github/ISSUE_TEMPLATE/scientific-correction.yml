@@ -1,0 +1,28 @@
+name: Scientific correction or missing prior work
+description: Report an error, missing citation, invalid assumption, or unsupported claim.
+title: "[Correction] "
+body:
+  - type: markdown
+    attributes:
+      value: "Evidence-driven corrections and negative findings are welcome. Please do not include private Sherlock material, unpublished keys, secrets, or unlicensed source assets."
+  - type: input
+    id: location
+    attributes:
+      label: Affected file or experiment
+      placeholder: "RESULTS.md or evidence/b17/RESULTS.md"
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Exact statement needing correction
+      description: Quote a small relevant excerpt or describe the specific factual or methodological issue.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence, alternative explanation, and suggested correction
+      description: Give verifiable sources, controls, or a reproducible failing case. A DOI or primary manuscript source is welcome.
+    validations:
+      required: true
