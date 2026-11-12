@@ -1,84 +1,83 @@
-# Voynich Manuscript Research | Public Research Record
+# Voynich Manuscript Research
 
-**Independent, exploratory research on the Voynich Manuscript (Beinecke MS 408)**
+**An independent, evidence-led investigation of the Voynich Manuscript (Yale Beinecke MS 408)**
+
+[![Research publication quality](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/workflows/repository-quality.yml/badge.svg)](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/workflows/repository-quality.yml)
+[![B09 reproducibility](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/workflows/b09-public-reproduction.yml/badge.svg)](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/workflows/b09-public-reproduction.yml)
+[![B10 reproducibility](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/workflows/b10-public-reproduction.yml/badge.svg)](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/workflows/b10-public-reproduction.yml)
+[![B17 diagnostic](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/workflows/b17-public-reproduction.yml/badge.svg)](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/workflows/b17-public-reproduction.yml)
 
 **Maintainer:** Yusuf Can Altınkaynak  
-**Public record initiated:** 11 November 2026  
-**Status:** Research in progress; **no independently verified decipherment, reading key, phonetic mapping, or word translation**.
+**Research scope:** Computational analysis, historical cipher comparison, testable writing-system hypotheses, and scientific reproducibility  
+**Public record:** Established November 2026; documentation updated **12 November 2026**  
+**Decipherment status:** **No independently verified key, sound system, word meaning, or translation.**
 
-This repository presents a carefully scoped public record of computational and historical hypotheses about the Voynich Manuscript. The objective is to test how the manuscript's writing behaves and to compare competing language, script, and cipher mechanisms without treating resemblance or a machine-learning score as a translation.
+> **Scientific boundary:** This project is **not** announcing a solution to the Voynich Manuscript. It measures specific observable patterns in editorial transcriptions. Successful statistical prediction, software CI, and matching codes are **not equivalent to reading the historical text**.
 
-The public repository is **not** a mirror of the private research environment. It does not contain the proprietary Sherlock research implementation, model weights, unpublished candidate keys, private correspondence, credentials, or third-party raw corpora and manuscript images. Some summarized results originate in internal experiment records and **cannot yet be reproduced from this public release**. Exceptions are the narrowly defined **B09 spelling-collision calculation** and **B10 full-spelling candidate-selection benchmark**, for which separately scoped public reference programs and successful GitHub Actions runs are now available. This is computational repeatability, **not independent semantic verification**.
+## At a glance
 
-## Public evidence packages and scientific assessments
+The project separates *observation*, *prediction*, *cipher calibration* and *historical meaning*. A narrow positive result is published with its denominators, failed controls, corpus limitations and a reproducible computational procedure where available.
 
-The repository now includes two **separate reference benchmark implementations**. B09 has successfully reproduced its structural aggregate statistics; [B10](evidence/b10/RESULTS.md) has also successfully run its more demanding, restricted full-spelling candidate-selection task with a fairer model-selection grid. In the B10 public test, contextual top-1 classification improved slightly over position-only on ZL3b but not IT2a. The [B09 completed run](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/runs/42992577209) and [B10 completed run](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/runs/43069965161) provide public execution evidence. Such runs are **not** outside scientific replication, verified translation, or proof of a historical key.
+| Public study | Precisely measured task | Reported results on ZL3b / IT2a | Evidence status |
+| --- | --- | --- | --- |
+| **[B09](evidence/b09/README.md)** | Does deleting a fixed set of EVA transcription characters cause unseen *spellings* to match transformed training codes? | **75.77% / 74.95%** code collisions; about **85%** of matches are ambiguous among several original spellings | [Reproducible public computation](evidence/b09/RESULTS.md); external scientific audit pending |
+| **[B10](evidence/b10/README.md)** | Can a model choose the correct original *EVA spelling* from multiple already-seen training candidates? | **53.90% / 53.05%** contextual top-1 on **4,659 / 4,616 eligible examples**, compared with a strong frequency/position baseline | [Reproducible public computation](evidence/b10/RESULTS.md); right-context use and selection bias disclosed |
+| **[B17-OPEN](evidence/b17/README.md)** | Can models predict which of two different word spellings appeared first in a physical manuscript line? | **52.54% / 52.52%** directed word-pair accuracy; **61.16% / 60.35%** visible edge-position diagnostic | [Reproducible public computation](evidence/b17/RESULTS.md); **not** the original private whole-line B17 |
 
-The [Sherlock Model Card](SHERLOCK_MODEL_CARD.md) discloses the private system's intended research uses and limitations without opening proprietary code. The [cipher-family comparison](CIPHER_FAMILY_COMPARISON.md) summarizes exploratory internal CFT-001 measurements and prior academic work; that entire experiment is **not** independently reproducible from this public repository.
+All three experiments use version-pinned **ZL3b and IT2a transcriptions of the same manuscript**. These are **not two independent historical witnesses**. Previously explored folios were reused in the tests; the work does **not** establish a newly blind historical decipherment. Results across the three tasks must **never be combined as a fraction of the book decoded**. Historical semantic accuracy remains **NOT ESTIMABLE**.
 
-## First publicly runnable real-data evidence package
+The publicly released reference scripts were written separately from the **private Sherlock** research environment. None of the scripts is a distribution of Sherlock code, model checkpoints, candidate keys or proprietary training assets.
 
-**[B09-OPEN-001: unseen-spelling code collisions](evidence/b09/README.md)** is a small, transparent Python-standard-library test on version-pinned ZL3b and IT2a transcriptions. Both inputs are independently downloaded and hash-checked; a folio-partitioned OOV test compares deletion of `aeioy` against deletion of `dklrs` and 30 matched-deletion-count randomized controls. This explicitly tests **spelling collisions, not decipherment**.
+## Where to begin
 
-- [Measured public-run results](evidence/b09/RESULTS.md): 875 / 966 OOV test occurrences; 75.77% / 74.95% `aeioy` collisions, versus the specified controls.
-- [Reproduction script](evidence/b09/reference.py), [regression tests](evidence/b09/test_reference.py), [frozen expected outputs](evidence/b09/expected_metrics.json).
-- [Successful public GitHub Actions run](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/runs/42992577209).
-
-The code is a **reference reimplementation**, not the private Sherlock software. These are previously explored holdouts, **not a newly blind discovery**. A third-party research team has **not yet** independently replicated or reviewed the findings.
-
-## Read the research
-
-| Document | Purpose |
+| Publication | What it contains |
 | --- | --- |
-| [HYPOTHESES.md](HYPOTHESES.md) | Competing hypotheses, limitations, and falsification criteria |
-| [GLYPH_OBFUSCATION_STUDY.md](GLYPH_OBFUSCATION_STUDY.md) | English-language scientific synthesis of B08–B16: glyph deletion, collisions, controls, and negative results |
-| [evidence/b10/README.md](evidence/b10/README.md) | Successfully run public B10 full-form selection benchmark, with fair baseline grid and measured results |
-| [SHERLOCK_MODEL_CARD.md](SHERLOCK_MODEL_CARD.md) | Public Sherlock capabilities, limitations, research boundaries, and evaluation requirements |
-| [CIPHER_FAMILY_COMPARISON.md](CIPHER_FAMILY_COMPARISON.md) | CFT-001 structural cipher and copy-modify comparison; external comparators and negative evidence |
-| [SHERLOCK_SCIENTIFIC_ASSESSMENT.md](SHERLOCK_SCIENTIFIC_ASSESSMENT.md) | Public Koçi Bey (KBR-001) scientific assessment: Sherlock's capabilities, limitations, evidence gates and roadmap |
-| [evidence/b09/README.md](evidence/b09/README.md) | First public real-data reproduction package and verified run |
-| [METHODOLOGY.md](METHODOLOGY.md) | Research design, controls, leakage risks, and evidence standards |
-| [RESULTS.md](RESULTS.md) | Dated exploratory findings, negative results, and what they **do not** establish |
-| [REPRODUCIBILITY.md](REPRODUCIBILITY.md) | Current reproducibility gap and an auditable release checklist |
-| [SOURCES_AND_RIGHTS.md](SOURCES_AND_RIGHTS.md) | Primary sources, transcription provenance, third-party rights, and licensing status |
-| [CITATION.cff](CITATION.cff) | How to cite this **repository** (not a peer-reviewed publication) |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | How to submit falsifiable, sourced research contributions |
+| **[Research roadmap](RESEARCH_ROADMAP.md)** | Delivered stages, unmet scientific acceptance gates, independently auditable next steps |
+| **[Sherlock Model Card](SHERLOCK_MODEL_CARD.md)** | Intended uses, supported measurements, methodological limitations and disclosure boundaries |
+| **[Koçi Bey scientific assessment](SHERLOCK_SCIENTIFIC_ASSESSMENT.md)** | Critical programme review, six principal obstacles and three acceptance gates |
+| **[Hypothesis register](HYPOTHESES.md)** | Competing, falsifiable claims and their current evidential status |
+| **[Glyph-deletion study](GLYPH_OBFUSCATION_STUDY.md)** | B08–B16 structural experiments and negative controls, distinguishing code collisions from reading |
+| **[Cipher-family comparison](CIPHER_FAMILY_COMPARISON.md)** | CFT-001 exploratory comparison with prior published cipher and copy-modify models |
+| **[Methodology](METHODOLOGY.md)** and **[results ledger](RESULTS.md)** | Evaluation principles, scientific status labels, limitations and dated findings |
+| **[Reproducibility](REPRODUCIBILITY.md)** | Required source manifests, data separation, run evidence and independent validation standards |
 
-## Research directions
+### Reproduce the three scoped public computations
 
-- Position-sensitive patterns in glyph sequences, words, lines, and manuscript sections.
-- Alternative interpretations of apparent stems, suffixes, scribal variation, and transliteration.
-- A **constructed or adapted writing/language system** hypothesis involving historical borrowing; this is **unverified**.
-- Comparison of cipher families, including substitution, homophony, variable-length encoding, and copy-modify processes.
-- Calibrating methods on *known* ciphers, while keeping success on those ciphers separate from success on Voynich.
+Python 3.11+ and an internet connection are sufficient to retrieve the exact pinned upstream transcriptions and run the reference implementations. No private repository credentials are required.
 
-The name **Sherlock** denotes a private experimental research system for candidate generation, controlled comparisons, and evaluation. Its presence in research descriptions is **not** evidence that the manuscript has been deciphered. No source code, architecture, keys, training data, or model checkpoints for Sherlock are published here.
+```bash
+# First, verify the public code and repository integrity:
+python scripts/audit_public_repo.py
+python -m unittest discover -s evidence/b09 -p 'test_*.py' -v
+python -m unittest discover -s evidence/b10 -p 'test_*.py' -v
+python -m unittest discover -s evidence/b17 -p 'test_*.py' -v
 
-## Evidence rules
+# Then run real-source computations and compare frozen summary metrics:
+python evidence/b09/reference.py --download --trials 30 --out /tmp/b09-result.json
+python evidence/b09/check_results.py --actual /tmp/b09-result.json
 
-1. **Observation is not interpretation.** A recurring pattern does not prove a sound, word, language, or meaning.
-2. **Internal replication is not independent validation.** Two transcriptions of MS 408 are not two independent manuscripts.
-3. **Known-key or synthetic-cipher benchmarks are calibrations.** They cannot be reported as Voynich decoding accuracy.
-4. **Negative outcomes are retained.** Failure of a *specific implementation* does not refute every version of a hypothesis.
-5. **No translation percentage without an independently verified truth set.** Current semantic decipherment accuracy is **not estimable**, not “0%.”
+python evidence/b10/reference.py --download --null-reps 99 --bootstrap-reps 500 --out /tmp/b10-result.json
+python evidence/b10/check_results.py --actual /tmp/b10-result.json
 
-Statuses used here: **EXPLORATORY**, **SIMULATION / CALIBRATION**, **NOT SUPPORTED (specific test)**, **NOT EVALUABLE**, **PENDING INDEPENDENT REVIEW**, and **NOT YET SCIENTIFICALLY VERIFIED**.
+python evidence/b17/reference.py --download --out /tmp/b17-result.json
+python evidence/b17/check_results.py --actual /tmp/b17-result.json
+```
 
-## Primary manuscript and external materials
+**Execution evidence:** [B09 passing Actions run](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/runs/42993276261), [B10 passing Actions run](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/runs/43070522482), [B17 passing Actions run](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/actions/runs/43185657803). The live badges above reflect **software-workflow status, not peer review or decipherment**.
 
-The manuscript is held by the **Beinecke Rare Book & Manuscript Library, Yale University**, as MS 408. Yale provides digital images and a general description:
+## Scholarly standards and release policy
 
-- [Yale Library: The Beinecke Cipher (Voynich) Manuscript](https://beinecke.library.yale.edu/beinecke/collections/beinecke-cipher-voynich-manuscript)
-- [Sources, provenance, and rights](SOURCES_AND_RIGHTS.md)
+- **Independent validation is not yet complete.** Publicly runnable code and repeat runs are computational evidence, not an external referee's finding. See [reproducibility requirements](REPRODUCIBILITY.md).
+- **Negative results remain visible.** Failed tests, competing models and alternative interpretations are recorded rather than discarded.
+- **Comparative research is credited.** The project does not claim authorship of historical cipher systems or earlier Voynich models; see [CFT-001](CIPHER_FAMILY_COMPARISON.md).
+- **Upstream text and image rights are respected.** Third-party transcriptions are fetched from pinned sources rather than redistributed. See [sources and rights](SOURCES_AND_RIGHTS.md).
+- **No private technology disclosure.** The proprietary Sherlock research system, unpublished code, model weights, candidate keys, private correspondence and secrets are not part of this public repository.
+- **English-only public research communication.** Original personal names, historical titles and primary-source terms remain properly attributed.
 
-This project is independent. It is **not affiliated with, endorsed by, or a decipherment announcement from Yale University**.
+## Contribute, cite and follow the work
 
-## Language of this public repository
+Critical assessments, independent reimplementations, corrections and negative findings are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) and the [roadmap](RESEARCH_ROADMAP.md). See [CITATION.cff](CITATION.cff) to cite this *living GitHub research record*, not a peer-reviewed decipherment paper.
 
-**English is the publication language** for all public-facing reports, repository documentation, code comments, workflow descriptions, issue discussions, and contribution proposals. Names of people and historical report titles (e.g., **Koçi Bey**) are preserved as proper nouns; any substantial non-English quotation must include an English rendering. This convention does not change the private laboratory's language or source-document originals.
+The manuscript is held by [Yale's Beinecke Rare Book & Manuscript Library, MS 408](https://beinecke.library.yale.edu/beinecke/collections/beinecke-cipher-voynich-manuscript). This independent project is **not affiliated with or endorsed by Yale University**.
 
-## Participation and citation
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for evidence-based contributions and [CITATION.cff](CITATION.cff) for attribution. This repository is a living, non-peer-reviewed research record. The presence of a public link or a citation file does not constitute external verification.
-
-**Licensing notice:** A reuse license has **not yet been selected** for these original documents. Do not assume that public visibility grants permission for unrestricted reuse; see [SOURCES_AND_RIGHTS.md](SOURCES_AND_RIGHTS.md) for details.
+**Rights:** No general reuse license for the project's original documents and public reference scripts has yet been granted. **Public visibility does not equal an open-source or Creative Commons license.** See [SOURCES_AND_RIGHTS.md](SOURCES_AND_RIGHTS.md) and the [release-readiness decision](https://github.com/yusufcanaltinkaynak55-cloud/Voynich-Manuscript-Research-Public/issues/3).
