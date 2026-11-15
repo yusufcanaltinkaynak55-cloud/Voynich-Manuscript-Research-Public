@@ -32,13 +32,18 @@ ZL3b (René Zandbergen and Gabriel Landini) and IT2a (Takeshi Takahashi) are cre
 - [Naibbe cipher study, DOI 10.1080/01611194.2025.2566408](https://doi.org/10.1080/01611194.2025.2566408), an **external published comparator**. Related cipher constructions and comparisons predate this repository; this research does not claim their invention.
 - Other papers, historical source editions, corpus authors, or digitization providers must be acknowledged **per specific future experiment**, not absorbed into a blanket ownership claim.
 
-## Rights in the public research documents
+## Rights in the public research documents and reference code
 
-As of this initial public commit, **no reuse license has been granted for the repository's original documents**. The repository is publicly viewable, but visibility is not equivalent to a Creative Commons or open-source license. Normal platform viewing/forking terms and applicable law remain relevant.
+**Licensing decision recorded: 15 November 2026.** The repository uses two separately scoped public licenses:
 
-A future document license such as **CC BY 4.0** can be considered separately from any software license, after an explicit decision by the rights holder. Note that CC BY 4.0 permits **commercial reuse with attribution**; it is not a non-commercial-only license.
+- **Original author-created research prose, original diagrams and explanatory Markdown documents:** [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). Reuse and adaptation, including commercial uses, require appropriate attribution, a license link and disclosure of changes.
+- **Original public reference Python scripts and original GitHub Actions workflow code:** [MIT License](LICENSE-CODE). Copies or substantial portions of the code must retain the copyright and license notice.
 
-No license for this repository can transfer third-party copyright or grant rights in source material the maintainer does not own. A later document or code license must clearly define its file scope and third-party exceptions.
+The authoritative [file-level licensing map](LICENSE.md) identifies included paths and exclusions. **No blanket license is granted to copied third-party content**, including MS 408 facsimile images, externally authored transcriptions, prior published scholarly work, third-party datasets, software dependencies, or materials fetched by the reference scripts. Original works and outputs whose rights cannot be established remain outside the licenses until reviewed.
+
+The independent private Sherlock laboratory, candidate keys, checkpoints, unpublished systems (including ALFA), and private communications are not part of this public licensing grant. Publishing these limited reference implementations does **not** open-source the private research environment.
+
+The licenses do not imply endorsement by Yale, an independently confirmed decipherment, or peer review.
 
 ## Citation and provenance principles
 
